@@ -27,7 +27,7 @@
     /**
      * default scope for all components in workspace.
      **/
-    "defaultScope": "enlear.landing-templates"
+    "defaultScope": "enlear.bit-landing-page-template"
   },
   /**
    * main configuration for component dependency resolution.
