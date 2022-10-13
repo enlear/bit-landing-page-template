@@ -39,9 +39,6 @@
     "packageManager": "teambit.dependencies/pnpm",
     "policy": {
       "dependencies": {
-        "@emotion/react": "11.10.4",
-        "@emotion/styled": "11.10.4",
-        "@mui/material": "5.10.9",
         "@teambit/eslint-config-bit-react": "~0.0.367",
         "@typescript-eslint/eslint-plugin": "4.29.3",
         "eslint-import-resolver-node": "0.3.6",
@@ -52,6 +49,9 @@
         "eslint-plugin-react": "7.25.1"
       },
       "peerDependencies": {
+        "@emotion/react": "11.10.4",
+        "@emotion/styled": "11.10.4",
+        "@mui/material": "5.10.9",
         "@testing-library/react": "^12.1.5",
         "react": "17.0.2",
         "react-dom": "17.0.2"
