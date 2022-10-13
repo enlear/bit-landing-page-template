@@ -19,6 +19,8 @@ importers:
       '@types/testing-library__jest-dom': 5.9.5
       '@typescript-eslint/eslint-plugin': 4.29.3
       core-js: ^3.0.0
+      eslint-config-airbnb: 19.0.4
+      eslint-config-airbnb-typescript: 17.0.0
       eslint-import-resolver-node: 0.3.6
       eslint-plugin-import: 2.22.1
       eslint-plugin-jest: 24.4.0
@@ -35,6 +37,8 @@ importers:
       '@testing-library/react': registry.npmjs.org/@testing-library/react/12.1.5_sfoxds7t5ydpegc3knd667wn6m
       '@typescript-eslint/eslint-plugin': registry.npmjs.org/@typescript-eslint/eslint-plugin/4.29.3
       core-js: registry.npmjs.org/core-js/3.25.5
+      eslint-config-airbnb: registry.npmjs.org/eslint-config-airbnb/19.0.4_hn3nuev6vo77u7hf3h763ct5de
+      eslint-config-airbnb-typescript: registry.npmjs.org/eslint-config-airbnb-typescript/17.0.0_zh52qigxgmncrdjggmt6uhycpu
       eslint-import-resolver-node: registry.npmjs.org/eslint-import-resolver-node/0.3.6
       eslint-plugin-import: registry.npmjs.org/eslint-plugin-import/2.22.1
       eslint-plugin-jest: registry.npmjs.org/eslint-plugin-jest/24.4.0_6vw6kfq6in2h3hmc7tpr2jc3cy
@@ -1935,6 +1939,28 @@ packages:
       object.entries: registry.npmjs.org/object.entries/1.1.5
     dev: false
 
+  registry.npmjs.org/eslint-config-airbnb-base/15.0.0_5r6sr333lc7gkp2zt7fcegg6vi:
+    resolution: {integrity: sha512-xaX3z4ZZIcFLvh2oUNvcX5oEofXda7giYmuplVxoOg5A7EXJMrUyqRgR+mhDhPK8LZ4PttFOBvCYDbX3sUoUig==, registry: https://node.bit.dev/, tarball: https://registry.npmjs.org/eslint-config-airbnb-base/-/eslint-config-airbnb-base-15.0.0.tgz}
+    id: registry.npmjs.org/eslint-config-airbnb-base/15.0.0
+    name: eslint-config-airbnb-base
+    version: 15.0.0
+    engines: {node: ^10.12.0 || >=12.0.0}
+    peerDependencies:
+      eslint: '*'
+      eslint-plugin-import: '*'
+    peerDependenciesMeta:
+      eslint:
+        optional: true
+      eslint-plugin-import:
+        optional: true
+    dependencies:
+      confusing-browser-globals: registry.npmjs.org/confusing-browser-globals/1.0.11
+      eslint-plugin-import: registry.npmjs.org/eslint-plugin-import/2.22.1
+      object.assign: registry.npmjs.org/object.assign/4.1.4
+      object.entries: registry.npmjs.org/object.entries/1.1.5
+      semver: registry.npmjs.org/semver/6.3.0
+    dev: false
+
   registry.npmjs.org/eslint-config-airbnb-typescript/12.0.0_dos6lyfu26zkn4hjhrkjbroiwe:
     resolution: {integrity: sha512-TUCVru1Z09eKnVAX5i3XoNzjcCOU3nDQz2/jQGkg1jVYm+25fKClveziSl16celfCq+npU0MBPW/ZnXdGFZ9lw==, registry: https://node.bit.dev/, tarball: https://registry.npmjs.org/eslint-config-airbnb-typescript/-/eslint-config-airbnb-typescript-12.0.0.tgz}
     id: registry.npmjs.org/eslint-config-airbnb-typescript/12.0.0
@@ -1958,6 +1984,31 @@ packages:
       - eslint-plugin-react-hooks
       - supports-color
       - typescript
+    dev: false
+
+  registry.npmjs.org/eslint-config-airbnb-typescript/17.0.0_zh52qigxgmncrdjggmt6uhycpu:
+    resolution: {integrity: sha512-elNiuzD0kPAPTXjFWg+lE24nMdHMtuxgYoD30OyMD6yrW1AhFZPAg27VX7d3tzOErw+dgJTNWfRSDqEcXb4V0g==, registry: https://node.bit.dev/, tarball: https://registry.npmjs.org/eslint-config-airbnb-typescript/-/eslint-config-airbnb-typescript-17.0.0.tgz}
+    id: registry.npmjs.org/eslint-config-airbnb-typescript/17.0.0
+    name: eslint-config-airbnb-typescript
+    version: 17.0.0
+    peerDependencies:
+      '@typescript-eslint/eslint-plugin': '*'
+      '@typescript-eslint/parser': '*'
+      eslint: '*'
+      eslint-plugin-import: '*'
+    peerDependenciesMeta:
+      '@typescript-eslint/eslint-plugin':
+        optional: true
+      '@typescript-eslint/parser':
+        optional: true
+      eslint:
+        optional: true
+      eslint-plugin-import:
+        optional: true
+    dependencies:
+      '@typescript-eslint/eslint-plugin': registry.npmjs.org/@typescript-eslint/eslint-plugin/4.29.3
+      eslint-config-airbnb-base: registry.npmjs.org/eslint-config-airbnb-base/15.0.0_5r6sr333lc7gkp2zt7fcegg6vi
+      eslint-plugin-import: registry.npmjs.org/eslint-plugin-import/2.22.1
     dev: false
 
   registry.npmjs.org/eslint-config-airbnb/18.2.0_hn3nuev6vo77u7hf3h763ct5de:
@@ -1985,6 +2036,38 @@ packages:
         optional: true
     dependencies:
       eslint-config-airbnb-base: registry.npmjs.org/eslint-config-airbnb-base/14.2.0_5r6sr333lc7gkp2zt7fcegg6vi
+      eslint-plugin-import: registry.npmjs.org/eslint-plugin-import/2.22.1
+      eslint-plugin-jsx-a11y: registry.npmjs.org/eslint-plugin-jsx-a11y/6.4.1
+      eslint-plugin-react: registry.npmjs.org/eslint-plugin-react/7.25.1
+      object.assign: registry.npmjs.org/object.assign/4.1.4
+      object.entries: registry.npmjs.org/object.entries/1.1.5
+    dev: false
+
+  registry.npmjs.org/eslint-config-airbnb/19.0.4_hn3nuev6vo77u7hf3h763ct5de:
+    resolution: {integrity: sha512-T75QYQVQX57jiNgpF9r1KegMICE94VYwoFQyMGhrvc+lB8YF2E/M/PYDaQe1AJcWaEgqLE+ErXV1Og/+6Vyzew==, registry: https://node.bit.dev/, tarball: https://registry.npmjs.org/eslint-config-airbnb/-/eslint-config-airbnb-19.0.4.tgz}
+    id: registry.npmjs.org/eslint-config-airbnb/19.0.4
+    name: eslint-config-airbnb
+    version: 19.0.4
+    engines: {node: ^10.12.0 || ^12.22.0 || ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      eslint: '*'
+      eslint-plugin-import: '*'
+      eslint-plugin-jsx-a11y: '*'
+      eslint-plugin-react: '*'
+      eslint-plugin-react-hooks: '*'
+    peerDependenciesMeta:
+      eslint:
+        optional: true
+      eslint-plugin-import:
+        optional: true
+      eslint-plugin-jsx-a11y:
+        optional: true
+      eslint-plugin-react:
+        optional: true
+      eslint-plugin-react-hooks:
+        optional: true
+    dependencies:
+      eslint-config-airbnb-base: registry.npmjs.org/eslint-config-airbnb-base/15.0.0_5r6sr333lc7gkp2zt7fcegg6vi
       eslint-plugin-import: registry.npmjs.org/eslint-plugin-import/2.22.1
       eslint-plugin-jsx-a11y: registry.npmjs.org/eslint-plugin-jsx-a11y/6.4.1
       eslint-plugin-react: registry.npmjs.org/eslint-plugin-react/7.25.1
@@ -3431,6 +3514,13 @@ packages:
     resolution: {integrity: sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==, registry: https://node.bit.dev/, tarball: https://registry.npmjs.org/semver/-/semver-5.7.1.tgz}
     name: semver
     version: 5.7.1
+    hasBin: true
+    dev: false
+
+  registry.npmjs.org/semver/6.3.0:
+    resolution: {integrity: sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==, registry: https://node.bit.dev/, tarball: https://registry.npmjs.org/semver/-/semver-6.3.0.tgz}
+    name: semver
+    version: 6.3.0
     hasBin: true
     dev: false
 

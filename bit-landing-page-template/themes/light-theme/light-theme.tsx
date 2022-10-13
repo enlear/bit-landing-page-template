@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material/styles'
+import { createTheme } from '@mui/material/styles';
 import { ThemeOptions } from '@mui/material';
 import React, { useMemo, ReactNode } from 'react';
 import { ThemeProvider } from '@mui/material';
@@ -205,7 +205,6 @@ const lightThemeOptions: ThemeOptions = {
           color: '#FFFFFF',
         },
       },
-
     },
     MuiButton: {
       defaultProps: {
@@ -347,7 +346,7 @@ const lightThemeOptions: ThemeOptions = {
   typography: {
     button: {
       fontWeight: 600,
-      textTransform: 'none'
+      textTransform: 'none',
     },
     body1: {
       fontSize: '1rem',
@@ -474,13 +473,9 @@ export type LightThemeProps = {
 
 export function LightTheme({ children }: LightThemeProps) {
   const theme = useMemo(() => createTheme(lightThemeOptions), []);
-  return (
-    <ThemeProvider theme={theme}>
-      {children}
-    </ThemeProvider>
-  );
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 }
 
 LightTheme.defaultProps = {
   children: null,
-}
+};

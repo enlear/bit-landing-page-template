@@ -1,6 +1,10 @@
 module.exports = {
-  extends: ['@teambit/eslint-config-bit-react'],
+  extends: [
+    'airbnb',
+    'airbnb-typescript',
+    '@teambit/eslint-config-bit-react',
+  ],
   parserOptions: {
-    project: './tsconfig.json'
+    project: './tsconfig.json',
   },
-}
+};
