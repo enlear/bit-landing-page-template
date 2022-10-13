@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material/styles'
 import { ThemeOptions } from '@mui/material';
-import React, { ReactNode, useMemo } from 'react';
+import React, { useMemo, ReactNode } from 'react';
 import { ThemeProvider } from '@mui/material';
 
 interface ColorVariantScheme {
