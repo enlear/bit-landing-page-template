@@ -9,5 +9,18 @@
  */
 
 {
+    "themes/light-theme": {
+        "scope": "",
+        "version": "",
+        "defaultScope": "enlear.bit-landing-page-template",
+        "mainFile": "index.ts",
+        "rootDir": "bit-landing-page-template/themes/light-theme",
+        "config": {
+            "teambit.react/react": {},
+            "teambit.envs/envs": {
+                "env": "teambit.react/react"
+            }
+        }
+    },
     "$schema-version": "15.0.0"
 }
