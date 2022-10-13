@@ -10,17 +10,10 @@
 
 {
     "themes/light-theme": {
-        "scope": "",
-        "version": "",
-        "defaultScope": "enlear.bit-landing-page-template",
+        "scope": "enlear.bit-landing-page-template",
+        "version": "58e49a1454d8d4e23ece0a1df7006a36cb23fae0",
         "mainFile": "index.ts",
-        "rootDir": "bit-landing-page-template/themes/light-theme",
-        "config": {
-            "teambit.react/react": {},
-            "teambit.envs/envs": {
-                "env": "teambit.react/react"
-            }
-        }
+        "rootDir": "bit-landing-page-template/themes/light-theme"
     },
     "$schema-version": "15.0.0"
 }
