@@ -1,15 +1,11 @@
+import { LightTheme } from '@enlear/bit-landing-page-template.themes.light-theme';
 import React from 'react';
 import InfoIcon from '@mui/icons-material/Info';
-import { LightTheme } from '@enlear/bit-landing-page-template.themes.light-theme';
-import { Appbar } from './appbar';
+import { Sidebar } from './sidebar';
 
-export const BasicAppbar = () => (
+export const BasicSidebar = () => (
   <LightTheme>
-    <Appbar
-      ctaLabel="Get In Touch"
-      maxContainerWidth="md"
-      minHeight={64}
-      withMdBreakpoint
+    <Sidebar
       items={[
         {
           color: 'primary',
@@ -40,8 +36,8 @@ export const BasicAppbar = () => (
           ],
         },
       ]}
-      onMenuIconClick={() => alert('You clicked the menu icon, inflate a drawer')}
-      onCtaClick={() => alert('You clicked the CTA')}
+      open
+      onClose={() => alert('close sidebar')}
     />
   </LightTheme>
 );

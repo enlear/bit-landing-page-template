@@ -7,8 +7,43 @@ import { LightTheme } from '@enlear/bit-landing-page-template.themes.light-theme
 import { Logo } from '@enlear/bit-landing-page-template.widgets.logo';
 import { Button } from '@enlear/bit-landing-page-template.widgets.button';
 import { IconButton } from '@enlear/bit-landing-page-template.widgets.icon-button';
-import { MenuItem } from '../types';
 import { WebMenuItem } from '@enlear/bit-landing-page-template.navigation.web-menu-item';
+
+export type SubMenuItem = {
+  label: string;
+  href: string;
+  description: string;
+  color:
+    | 'primary'
+    | 'secondary'
+    | 'error'
+    | 'warning'
+    | 'info'
+    | 'success'
+    | 'action'
+    | 'inherit'
+    | 'disabled'
+    | undefined;
+  icon: React.ReactNode;
+};
+
+export type MenuItem = {
+  label: string;
+  href?: string;
+  expandable?: boolean;
+  sub: Array<SubMenuItem>;
+  color:
+    | 'primary'
+    | 'secondary'
+    | 'error'
+    | 'warning'
+    | 'info'
+    | 'success'
+    | 'action'
+    | 'inherit'
+    | 'disabled'
+    | undefined;
+};
 
 export type AppbarProps = {
   /**

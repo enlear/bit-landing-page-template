@@ -1,8 +1,9 @@
 import React, { ReactNode } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import { IconButton as MUIIconButton, SxProps } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 
-type Icon = 'hamburger';
+type Icon = 'hamburger' | 'close';
 type IconSize = 'large' | 'small' | 'medium';
 
 export type IconButtonProps = {
@@ -29,9 +30,12 @@ export type IconButtonProps = {
 
 const icons: { [key in Icon]: ReactNode } = {
   hamburger: <MenuIcon />,
+  close: <CloseIcon />,
 };
 
-export function IconButton({ icon, onClick, sx, iconSize }: IconButtonProps) {
+export function IconButton({
+  icon, onClick, sx, iconSize,
+}: IconButtonProps) {
   return (
     <MUIIconButton size={iconSize} sx={sx} onClick={onClick}>
       {icons[icon]}

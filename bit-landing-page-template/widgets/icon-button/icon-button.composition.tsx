@@ -1,8 +1,7 @@
 import React from 'react';
 import { IconButton } from './icon-button';
 
-export const IconButtonWithHamburger = () => {
-  return (
+export const IconButtonWithHamburger = () => (
     <div
       data-testid="button"
     >
@@ -11,5 +10,4 @@ export const IconButtonWithHamburger = () => {
         icon={'hamburger'}
       />
     </div>
-  );
-};
+);

@@ -9,23 +9,83 @@
  */
 
 {
+    "layouts/container": {
+        "scope": "enlear.bit-landing-page-template",
+        "version": "0.0.2",
+        "mainFile": "index.ts",
+        "rootDir": "bit-landing-page-template/layouts/container"
+    },
+    "layouts/wrapper": {
+        "scope": "enlear.bit-landing-page-template",
+        "version": "0.0.2",
+        "mainFile": "index.ts",
+        "rootDir": "bit-landing-page-template/layouts/wrapper"
+    },
+    "navigation/appbar": {
+        "scope": "",
+        "version": "0.0.4",
+        "mainFile": "index.ts",
+        "rootDir": "bit-landing-page-template/navigation/appbar"
+    },
+    "navigation/link": {
+        "scope": "",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "bit-landing-page-template/navigation/link"
+    },
+    "navigation/sidebar": {
+        "scope": "",
+        "version": "0.0.2",
+        "mainFile": "index.ts",
+        "rootDir": "bit-landing-page-template/navigation/sidebar"
+    },
+    "navigation/web-menu-item": {
+        "scope": "",
+        "version": "0.0.2",
+        "mainFile": "index.ts",
+        "rootDir": "bit-landing-page-template/navigation/web-menu-item"
+    },
     "themes/light-theme": {
         "scope": "enlear.bit-landing-page-template",
         "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/themes/light-theme"
     },
-    "widgets/navbar": {
+    "ui/header": {
         "scope": "",
-        "version": "",
+        "version": "0.0.4",
         "mainFile": "index.ts",
-        "rootDir": "bit-landing-page-template/widgets/navbar",
-        "config": {
-            "teambit.react/react": {},
-            "teambit.envs/envs": {
-                "env": "teambit.react/react"
-            }
-        }
+        "rootDir": "bit-landing-page-template/ui/header"
+    },
+    "widgets/button": {
+        "scope": "enlear.bit-landing-page-template",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "bit-landing-page-template/widgets/button"
+    },
+    "widgets/content-drop": {
+        "scope": "",
+        "version": "0.0.2",
+        "mainFile": "index.ts",
+        "rootDir": "bit-landing-page-template/widgets/content-drop"
+    },
+    "widgets/content-item": {
+        "scope": "",
+        "version": "0.0.2",
+        "mainFile": "index.ts",
+        "rootDir": "bit-landing-page-template/widgets/content-item"
+    },
+    "widgets/icon-button": {
+        "scope": "enlear.bit-landing-page-template",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "bit-landing-page-template/widgets/icon-button"
+    },
+    "widgets/logo": {
+        "scope": "enlear.bit-landing-page-template",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "bit-landing-page-template/widgets/logo"
     },
     "$schema-version": "15.0.0"
 }

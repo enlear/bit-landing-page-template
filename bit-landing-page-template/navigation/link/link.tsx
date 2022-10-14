@@ -1,6 +1,5 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, Fragment } from 'react';
 import { Link as MUILink, SxProps } from '@mui/material';
-import { Fragment } from 'react';
 
 export type LinkProps = {
   /**

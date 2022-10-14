@@ -1,22 +1,18 @@
 ---
-description: Am Appbar component.
+description: A Sidebar component.
 ---
 
-import { Appbar } from './appbar';
+import { Sidebar } from './sidebar';
 import InfoIcon from '@mui/icons-material/Info';
 import { LightTheme } from '@enlear/bit-landing-page-template.themes.light-theme';
 
-A component that renders a navigation menu
+A component that does something special and renders text in a div.
 
 ### Component usage
 
 ```js
 <LightTheme>
-  <Appbar
-    ctaLabel="Get In Touch"
-    maxContainerWidth="md"
-    minHeight={64}
-    withMdBreakpoint
+  <Sidebar
     items={[
       {
         color: 'primary',
@@ -47,21 +43,17 @@ A component that renders a navigation menu
         ],
       },
     ]}
-    onMenuIconClick={() => alert('You clicked the menu icon, inflate a drawer')}
-    onCtaClick={() => alert('You clicked the CTA')}
+    open
+    onClose={() => alert('close sidebar')}
   />
 </LightTheme>
 ```
 
-### A sample navigation menu
+### Render hello world!
 
 ```js live
 <LightTheme>
-  <Appbar
-    ctaLabel="Get In Touch"
-    maxContainerWidth="md"
-    minHeight={64}
-    withMdBreakpoint
+  <Sidebar
     items={[
       {
         color: 'primary',
@@ -92,8 +84,8 @@ A component that renders a navigation menu
         ],
       },
     ]}
-    onMenuIconClick={() => alert('You clicked the menu icon, inflate a drawer')}
-    onCtaClick={() => alert('You clicked the CTA')}
+    open
+    onClose={() => alert('close sidebar')}
   />
 </LightTheme>
 ```
