@@ -22,25 +22,25 @@
         "rootDir": "bit-landing-page-template/layouts/wrapper"
     },
     "navigation/appbar": {
-        "scope": "",
+        "scope": "enlear.bit-landing-page-template",
         "version": "0.0.4",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/navigation/appbar"
     },
     "navigation/link": {
-        "scope": "",
+        "scope": "enlear.bit-landing-page-template",
         "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/navigation/link"
     },
     "navigation/sidebar": {
-        "scope": "",
+        "scope": "enlear.bit-landing-page-template",
         "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/navigation/sidebar"
     },
     "navigation/web-menu-item": {
-        "scope": "",
+        "scope": "enlear.bit-landing-page-template",
         "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/navigation/web-menu-item"
@@ -52,7 +52,7 @@
         "rootDir": "bit-landing-page-template/themes/light-theme"
     },
     "ui/header": {
-        "scope": "",
+        "scope": "enlear.bit-landing-page-template",
         "version": "0.0.4",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/ui/header"
@@ -64,13 +64,13 @@
         "rootDir": "bit-landing-page-template/widgets/button"
     },
     "widgets/content-drop": {
-        "scope": "",
+        "scope": "enlear.bit-landing-page-template",
         "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/widgets/content-drop"
     },
     "widgets/content-item": {
-        "scope": "",
+        "scope": "enlear.bit-landing-page-template",
         "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/widgets/content-item"
