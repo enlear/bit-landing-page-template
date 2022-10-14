@@ -1,0 +1,23 @@
+---
+description: A Wrapper Component For MUI Light Theme
+---
+
+import { LightTheme } from './light-theme';
+import { Button } from '@mui/material';
+
+A component that accepts children and renders them using a dynamic light theme variant.
+
+### Component usage
+```jsx
+<LightTheme>
+    {children}
+</LightTheme>
+```
+
+### Creating a Button in Light Theme
+
+```js live
+<LightTheme>
+    <Button variant='contained'> Sample Light Theme </Button>
+</LightTheme>
+```
