@@ -4,7 +4,13 @@ import React from 'react';
 import Writer from 'typewriter-effect';
 
 export type TypewriterProps = {
+  /**
+   * The items to be typed
+   */
   typeItems: string[];
+  /**
+   * Property to loop the typeItems
+   */
   loop?: boolean;
 } & TypographyProps;
 
