@@ -1,5 +1,4 @@
 import { Container } from '@enlear/bit-landing-page-template.layouts.container';
-import { Wrapper } from '@enlear/bit-landing-page-template.layouts.wrapper';
 import { Link } from '@enlear/bit-landing-page-template.navigation.link';
 import { Button } from '@enlear/bit-landing-page-template.widgets.button';
 import { Theme, useMediaQuery, useTheme } from '@mui/material';
@@ -14,6 +13,7 @@ import React from 'react';
 import { useMemo } from 'react';
 import { FooterBrand, FooterBrandLabels, FooterItem } from './footer.types';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Fragment } from 'react';
 
 export type FooterProps = {
   /**
@@ -144,10 +144,7 @@ export function Footer({
               )}
             </Grid>
           ))}
-          <Wrapper
-            condition={Boolean(ctaCaption)}
-            wrapper={(children) => children}
-          >
+          {ctaCaption && (
             <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
               <Button
                 variant="text"
@@ -164,56 +161,54 @@ export function Footer({
                 {ctaCaption}
               </Button>
             </Grid>
-          </Wrapper>
+          )}
         </Grid>
       </Container>
       <Container maxWidth="lg">
-        <Wrapper condition={!!brand} wrapper={(children) => children}>
-          <Divider
-            sx={{
-              borderColor: alpha('#FFF', 0.5),
-              my: 3,
-            }}
-          />
-          <Box
-            sx={{
-              display: 'flex',
-            }}
-          >
-            <Grid container spacing={3}>
-              <Wrapper
-                condition={!!brand?.brandLabel}
-                wrapper={(children) => children}
-              >
-                <Grid item md={3} xs={12}>
-                  <Typography
-                    sx={{
-                      fontSize: 13,
-                    }}
-                  >
-                    {brand?.brandLabel}
-                  </Typography>
-                </Grid>
-              </Wrapper>
-              <Wrapper
-                condition={
-                  !!(brand?.cookieUrl || brand?.privacyUrl || brand?.termsUrl)
-                }
-                wrapper={(children) => children}
-              >
-                <Grid item md={9} sx={{ display: 'flex', gap: 2 }}>
-                  {Object.entries(brand || {}).map(([key, value]) => (
-                    <Link key={key} href={value} sx={{ ...linkSx }}>
-                      <Typography sx={{ ...linkSx }}>
-                        {FooterBrandLabels[key as keyof FooterBrand]}
-                      </Typography>
-                    </Link>
-                  ))}
-                </Grid>
-              </Wrapper>
-            </Grid>
-          </Box>
-        </Wrapper>
+        {brand && (
+          <Fragment>
+            <Divider
+              sx={{
+                borderColor: alpha('#FFF', 0.5),
+                my: 3,
+              }}
+            />
+            <Box
+              sx={{
+                display: 'flex',
+              }}
+            >
+              <Grid container spacing={3}>
+                {!!brand?.brandLabel && (
+                  <Grid item md={3} xs={12}>
+                    <Typography
+                      sx={{
+                        fontSize: 13,
+                      }}
+                    >
+                      {brand?.brandLabel}
+                    </Typography>
+                  </Grid>
+                )}
+                {!!(
+                  brand?.cookieUrl ||
+                  brand?.privacyUrl ||
+                  brand?.termsUrl
+                ) && (
+                  <Grid item md={9} sx={{ display: 'flex', gap: 2 }}>
+                    {Object.entries(brand || {}).map(([key, value]) => (
+                      <Link key={key} href={value} sx={{ ...linkSx }}>
+                        <Typography sx={{ ...linkSx }}>
+                          {FooterBrandLabels[key as keyof FooterBrand]}
+                        </Typography>
+                      </Link>
+                    ))}
+                  </Grid>
+                )}
+              </Grid>
+            </Box>
+          </Fragment>
+        )}
       </Container>
     </Box>
   );
@@ -222,5 +217,5 @@ export function Footer({
 Footer.defaultProps = {
   items: [],
   brand: undefined,
-  ctaCaption: '',
+  ctaCaption: undefined,
 };
