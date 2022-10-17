@@ -58,8 +58,8 @@ const info: ColorVariantScheme = {
 
 const warning: ColorVariantScheme = {
   main: '#F5C10B',
-  light: '#F5C10B',
   dark: '#F5C10B',
+  light: '#FFF6E5',
   contrastText: '#FFFFFF',
 };
 
