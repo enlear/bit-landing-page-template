@@ -1,5 +1,9 @@
 import React, { ReactNode, Fragment } from 'react';
-import { Link as MUILink, SxProps } from '@mui/material';
+import {
+  Link as MUILink,
+  SxProps,
+  LinkProps as MUILinkProps,
+} from '@mui/material';
 
 export type LinkProps = {
   /**
@@ -16,11 +20,11 @@ export type LinkProps = {
    * The styling to be applied to the link
    */
   sx?: SxProps;
-};
+} & MUILinkProps;
 
-export function Link({ children, href, sx }: LinkProps) {
+export function Link({ children, href, sx, ...rest }: LinkProps) {
   return (
-    <MUILink href={href} target={'_blank'} underline="none" sx={sx}>
+    <MUILink href={href} target={'_blank'} underline="none" sx={sx} {...rest}>
       <Fragment>{children}</Fragment>
     </MUILink>
   );
