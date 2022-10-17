@@ -15,7 +15,7 @@ export function Hero({ children }: HeroProps) {
   return (
     <Box
       sx={{
-        backgroundColor: theme.palette.warning.light,
+        backgroundColor: theme.palette.primary.light,
         width: '100%',
         py: 8,
         minHeight: 400,

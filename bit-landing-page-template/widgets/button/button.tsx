@@ -1,5 +1,5 @@
 import React, { ReactNode, useState, useCallback } from 'react';
-import { Button as MUIButton, Box } from '@mui/material';
+import { Button as MUIButton, Box, SxProps } from '@mui/material';
 
 export type ButtonProps = {
   /**
@@ -36,6 +36,11 @@ export type ButtonProps = {
    * the callback to be invoked when button is clicked
    */
   onClick?: () => void;
+
+  /**
+   * custom button styling via MUI guidelines
+   */
+  sx?: SxProps;
 };
 
 export function Button({
@@ -46,6 +51,7 @@ export function Button({
   color,
   hoverTransition,
   onClick,
+  sx,
 }: ButtonProps) {
   const [hovered, setHovered] = useState<boolean>(false);
 
@@ -58,6 +64,9 @@ export function Button({
       onMouseLeave={toggleHover}
       color={color}
       size={size}
+      {...(sx && {
+        sx,
+      })}
       onClick={onClick}
       {...(endIcon && {
         endIcon: (

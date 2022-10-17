@@ -92,6 +92,8 @@ export const BasicFooter = () => (
   <LightTheme>
     <div data-testid="footer">
       <Footer
+        onCtaClick={() => alert('CTA Clicked')}
+        ctaCaption="Get Started"
         items={sections}
         brand={{
           brandLabel: '© 2022 Volt. All Rights Reserved.',

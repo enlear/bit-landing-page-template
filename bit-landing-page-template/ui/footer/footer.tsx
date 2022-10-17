@@ -1,6 +1,7 @@
 import { Container } from '@enlear/bit-landing-page-template.layouts.container';
 import { Wrapper } from '@enlear/bit-landing-page-template.layouts.wrapper';
 import { Link } from '@enlear/bit-landing-page-template.navigation.link';
+import { Button } from '@enlear/bit-landing-page-template.widgets.button';
 import { Theme, useMediaQuery, useTheme } from '@mui/material';
 import { alpha } from '@mui/material';
 import { Grid } from '@mui/material';
@@ -12,6 +13,7 @@ import { BoxProps } from '@mui/material';
 import React from 'react';
 import { useMemo } from 'react';
 import { FooterBrand, FooterBrandLabels, FooterItem } from './footer.types';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 export type FooterProps = {
   /**
@@ -23,9 +25,25 @@ export type FooterProps = {
    * will include brand name, terms, privacy and cookie links (all optional)
    */
   brand?: FooterBrand;
+
+  /**
+   * the footer call to action caption
+   */
+  ctaCaption?: string;
+
+  /**
+   * click listener for the footer call to action
+   */
+  onCtaClick?: () => void;
 } & BoxProps;
 
-export function Footer({ items, brand, ...boxProps }: FooterProps) {
+export function Footer({
+  items,
+  brand,
+  ctaCaption,
+  onCtaClick,
+  ...boxProps
+}: FooterProps) {
   const theme = useTheme();
   const mdUp = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'));
   const mdDown = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
@@ -126,6 +144,27 @@ export function Footer({ items, brand, ...boxProps }: FooterProps) {
               )}
             </Grid>
           ))}
+          <Wrapper
+            condition={Boolean(ctaCaption)}
+            wrapper={(children) => children}
+          >
+            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+              <Button
+                variant="text"
+                size="large"
+                sx={{
+                  fontSize: 18,
+                  fontWeight: 500,
+                  ml: -2,
+                  color: theme.palette.text.primary,
+                }}
+                onClick={onCtaClick}
+                endIcon={<ArrowForwardIcon />}
+              >
+                {ctaCaption}
+              </Button>
+            </Grid>
+          </Wrapper>
         </Grid>
       </Container>
       <Container maxWidth="lg">
@@ -183,4 +222,5 @@ export function Footer({ items, brand, ...boxProps }: FooterProps) {
 Footer.defaultProps = {
   items: [],
   brand: undefined,
+  ctaCaption: '',
 };

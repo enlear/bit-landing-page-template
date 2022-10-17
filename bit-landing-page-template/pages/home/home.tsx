@@ -17,6 +17,7 @@ import React from 'react';
 import { LightTheme } from '@enlear/bit-landing-page-template.themes.light-theme';
 import { Avatar, alpha } from '@mui/material';
 import { Content } from '@enlear/bit-landing-page-template.layouts.content';
+import { StatSummary } from '@enlear/bit-landing-page-template.ui.home.stat-summary';
 
 export type HomeProps = {};
 
@@ -125,6 +126,30 @@ export function Home({}: HomeProps) {
             </Button>
           </Box>
         </Hero>
+        <StatSummary
+          statistics={[
+            {
+              label: 'Components',
+              value: 1000,
+              suffix: '+',
+            },
+            {
+              label: 'Contributors',
+              value: 1000,
+              suffix: '+',
+            },
+            {
+              label: 'Teams',
+              value: 1000,
+              suffix: '+',
+            },
+            {
+              label: 'Companies',
+              value: 1000,
+              suffix: '+',
+            },
+          ]}
+        />
         <Footer
           items={sections}
           brand={{

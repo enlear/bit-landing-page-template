@@ -30,7 +30,7 @@ const divider = '#E6E8F0';
 
 const primary: ColorVariantScheme = {
   main: '#436EFD',
-  light: '#436DDD',
+  light: '#dee5fc',
   dark: '#496FFF',
   contrastText: '#FFFFFF',
 };
