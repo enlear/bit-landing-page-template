@@ -1,9 +1,9 @@
 import { Box } from '@mui/material';
-import React from 'react';
-import { useRef } from 'react';
-import { ContentDrop } from './content-drop';
+import React, { useRef } from 'react';
+
 import InfoIcon from '@mui/icons-material/Info';
 import { LightTheme } from '@enlear/bit-landing-page-template.themes.light-theme';
+import { ContentDrop } from './content-drop';
 
 export const BasicContentDrop = () => {
   const ref = useRef<HTMLDivElement | undefined>(undefined);

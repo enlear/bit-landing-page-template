@@ -1,6 +1,5 @@
 import { LightTheme } from '@enlear/bit-landing-page-template.themes.light-theme';
 import React from 'react';
-import { Footer } from './footer';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InfoIcon from '@mui/icons-material/Info';
@@ -8,6 +7,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import { Avatar } from '@mui/material';
 import { alpha } from '@mui/material/styles';
+import { Footer } from './footer';
 import { FooterItem } from './footer.types';
 
 const sections: FooterItem[] = [
@@ -88,20 +88,18 @@ const sections: FooterItem[] = [
   },
 ];
 
-export const BasicFooter = () => {
-  return (
-    <LightTheme>
-      <div data-testid="footer">
-        <Footer
-          items={sections}
-          brand={{
-            brandLabel: '© 2022 Volt. All Rights Reserved.',
-            termsUrl: '/terms',
-            privacyUrl: '/privacy',
-            cookieUrl: '/cookie',
-          }}
-        />
-      </div>
-    </LightTheme>
-  );
-};
+export const BasicFooter = () => (
+  <LightTheme>
+    <div data-testid="footer">
+      <Footer
+        items={sections}
+        brand={{
+          brandLabel: '© 2022 Volt. All Rights Reserved.',
+          termsUrl: '/terms',
+          privacyUrl: '/privacy',
+          cookieUrl: '/cookie',
+        }}
+      />
+    </div>
+  </LightTheme>
+);

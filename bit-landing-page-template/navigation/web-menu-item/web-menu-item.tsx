@@ -8,12 +8,21 @@ import { Wrapper } from '@enlear/bit-landing-page-template.layouts.wrapper';
 import { Link } from '@enlear/bit-landing-page-template.navigation.link';
 import { ContentDrop } from '@enlear/bit-landing-page-template.widgets.content-drop';
 
-
 export type SubMenuItem = {
   label: string;
   href: string;
   description: string;
-  color: "primary" | "secondary" | "error" | "warning" | "info" | "success" | "action" | "inherit" | "disabled" | undefined
+  color:
+    | 'primary'
+    | 'secondary'
+    | 'error'
+    | 'warning'
+    | 'info'
+    | 'success'
+    | 'action'
+    | 'inherit'
+    | 'disabled'
+    | undefined;
   icon: React.ReactNode;
 };
 
@@ -22,9 +31,18 @@ export type MenuItem = {
   href?: string;
   expandable?: boolean;
   sub: Array<SubMenuItem>;
-  color: "primary" | "secondary" | "error" | "warning" | "info" | "success" | "action" | "inherit" | "disabled" | undefined
+  color:
+    | 'primary'
+    | 'secondary'
+    | 'error'
+    | 'warning'
+    | 'info'
+    | 'success'
+    | 'action'
+    | 'inherit'
+    | 'disabled'
+    | undefined;
 };
-
 
 export type WebMenuItemProps = {
   /**
@@ -36,7 +54,7 @@ export type WebMenuItemProps = {
 export function WebMenuItem({ item }: WebMenuItemProps) {
   const [hovered, setHovered] = useState<boolean>(false);
   const { color, label, expandable, href, sub = [] } = item;
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement | undefined>(undefined);
 
   return (
     <Box

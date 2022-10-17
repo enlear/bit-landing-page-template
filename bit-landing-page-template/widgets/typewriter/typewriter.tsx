@@ -1,5 +1,5 @@
-import { TypographyProps } from '@mui/material';
-import { Typography } from '@mui/material';
+import { TypographyProps, Typography } from '@mui/material';
+
 import React from 'react';
 import Writer from 'typewriter-effect';
 
