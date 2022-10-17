@@ -1,0 +1,27 @@
+---
+description: A Content component.
+---
+
+import { Content } from './content';
+import { LightTheme } from '@enlear/bit-landing-page-template.themes.light-theme';
+import { Typography } from '@mui/material';
+
+A layout component that will create a custom background, and padding for content
+
+### Component usage
+
+```js
+<LightTheme>
+  <Content paddingTop={200}>hello world!</Content>
+</LightTheme>
+```
+
+### Render hello world!
+
+```js live
+<LightTheme>
+  <Content paddingTop={200}>
+    <Typography>hello world!</Typography>
+  </Content>
+</LightTheme>
+```
