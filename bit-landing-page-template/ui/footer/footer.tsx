@@ -197,11 +197,15 @@ export function Footer({
                 ) && (
                   <Grid item md={9} sx={{ display: 'flex', gap: 2 }}>
                     {Object.entries(brand || {}).map(([key, value]) => (
-                      <Link key={key} href={value} sx={{ ...linkSx }}>
-                        <Typography sx={{ ...linkSx }}>
-                          {FooterBrandLabels[key as keyof FooterBrand]}
-                        </Typography>
-                      </Link>
+                      <Fragment>
+                        {key !== 'brandLabel' && (
+                          <Link key={key} href={value} sx={{ ...linkSx }}>
+                            <Typography sx={{ ...linkSx }}>
+                              {FooterBrandLabels[key as keyof FooterBrand]}
+                            </Typography>
+                          </Link>
+                        )}
+                      </Fragment>
                     ))}
                   </Grid>
                 )}
