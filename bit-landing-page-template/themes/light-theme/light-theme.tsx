@@ -30,14 +30,14 @@ const divider = '#E6E8F0';
 
 const primary: ColorVariantScheme = {
   main: '#436EFD',
-  light: '#FFF6E5',
+  light: '#436DDD',
   dark: '#496FFF',
   contrastText: '#FFFFFF',
 };
 
 const secondary: ColorVariantScheme = {
   main: '#6C757D',
-  light: '#FFF6E5',
+  light: '#6C757D',
   dark: '#6C656D',
   contrastText: '#FFFFFF',
 };
