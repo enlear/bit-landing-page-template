@@ -91,9 +91,7 @@ export function Footer({ items, brand, ...boxProps }: FooterProps) {
                       }}
                       key={`${link.title}#${linkIdx}`}
                     >
-                      <Link underline="none" href={link.url}>
-                        {link.icon}
-                      </Link>
+                      <Link href={link.url}>{link.icon}</Link>
                     </Box>
                   ))}
                 </Box>
@@ -115,7 +113,6 @@ export function Footer({ items, brand, ...boxProps }: FooterProps) {
                             href={link.url}
                             color="textPrimary"
                             variant="subtitle2"
-                            underline="none"
                             sx={{ ...linkSx }}
                           >
                             {link.title}
