@@ -1,8 +1,13 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
+import { LightTheme } from "@enlear/bit-landing-page-template.themes.light-theme";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <LightTheme>
+      <Component {...pageProps} />
+    </LightTheme>
+  );
 }
 
-export default MyApp
+export default MyApp;

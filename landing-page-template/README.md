@@ -1,34 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NextJS Project For Consuming Bit Template
 
-## Getting Started
+This NextJS project has been set up to help use the Bit Template that was developed.
 
-First, run the development server:
+## Adding Components
 
-```bash
-npm run dev
-# or
-yarn dev
+This NextJS project has been setup to the `bit` landing page template.
+For this, use `npm i --force` to install the dependencies. There is a conflict with the Bit template as it uses React v17 while this NextJS project uses React v18.
+
+All components can be used by installing them as a seperate component. 
+However, if you wish to customize the component and use it, we recommend you make a copy of our component library - `https://bit.cloud/enlear/bit-landing-page-template/` and customize it on your own scope for your tailored use.
+
+When you install a component, it will be installed as a `node_module` which you can use as an ordinary component. 
+
+## Using the Template
+
+This template is backed with Material UI (MUI v5). Therefore, ensure that your `_app.tsx` file wraps a `ThemeProvider` offered by MUI. This MUI `ThemeProvider` is provided using the component `light-theme` offered in our template.
+
+So, first install the `light-theme` component using the command shown below.
+
+```
+npm i @enlear/bit-landing-page-template.themes.light-theme --legacy-peer-deps
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+If you run into an error while installing the component (404 error), ensure to set `@enlear` as a scoped `npm` registry using the command below.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```
+npm config set '@enlear:registry' https://node.bit.cloud
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Hereafter, re-install the light theme.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Afterward, wrap your child components in the `_app.tsx` component using the `LightTheme` component as shown below.
 
-## Learn More
+```
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+  <LightTheme>
+    <Component {...pageProps} />
+  </LightTheme>
+  )
+}
+```
 
-To learn more about Next.js, take a look at the following resources:
+Afterward, all components of this template library will work as expected.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Navigate to the `pages` directory of the `https://bit.cloud/enlear/bit-landing-page-template/` scope. Here you will find the `home` and `about` pages. Install them and add it to your `nextjs` routes as done so in this project. You can install individual components by navigating to the component on `bit`.
