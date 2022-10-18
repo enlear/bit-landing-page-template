@@ -1,0 +1,44 @@
+---
+description: A UserCard component.
+---
+
+import { UserCard } from './user-card';
+import { LightTheme } from '@enlear/bit-landing-page-template.themes.light-theme';
+
+A component that renders a card that displays information about a user
+
+### Component usage
+
+```js
+<LightTheme>
+  <UserCard
+    user={{
+      name: 'John Doe',
+      bio: 'This is the bio of John Doe',
+      avatarUrl: 'https://randomuser.me/api/portraits/men/91.jpg',
+      social: {
+        twitter: 'https://twitter.com/bitdev',
+        linkedIn: 'https://www.linkedin.com/company/bitdev/',
+      },
+    }}
+  />
+</LightTheme>
+```
+
+### Render a user card by the name of John Doe
+
+```js live
+<LightTheme>
+  <UserCard
+    user={{
+      name: 'John Doe',
+      bio: 'This is the bio of John Doe',
+      avatarUrl: 'https://randomuser.me/api/portraits/men/91.jpg',
+      social: {
+        twitter: 'https://twitter.com/bitdev',
+        linkedIn: 'https://www.linkedin.com/company/bitdev/',
+      },
+    }}
+  />
+</LightTheme>
+```

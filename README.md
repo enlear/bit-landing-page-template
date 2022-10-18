@@ -1,33 +1,13 @@
-# Welcome to your Bit Workspace
+# Sample Landing Page Built Using Bit & NextJS
 
-To get started straight away run `bit start` and open [localhost:3000](http://localhost:3000). It may take a while to build the first time you run this command as it is building the whole User Interface for your development environment.
+This repository contains a template for a website landing page and is designed and maintained by Enlear.
 
-```bash
-bit start
-```
+It includes a reusable component library compiled using Bit and a NextJS application to serve the front-end components. 
 
-## What's included
+The `enlear-workspace` directory is the local workspace that we have used to develop the components using Bit. However, we've exported the components to our scope.
 
-- **workspace.jsonc**
+The `landing-page-template` directory contains a NextJS project that uses the components designed by Bit
 
-This is the main configuration file of your bit workspace. Here you can modify the workspace name and icon as well as default directory and scope. It is where dependencies are found when you install anything. It is also where you register aspects, bit extensions as well as apply the environments for your components. This workspace has been setup so that all components use the React env. However you can create other components and apply other envs to them such as node, html, angular and aspect envs.
+If you plan on customizing the Bit components, you can open the `enlear-workspace` and navigate to the `workspace.jsonc` and update the default scope. Or you can create a new bit workspace and import the components that you need, customize it and export it to your desired scope.
 
-- **.bitmap**
-
-This is an auto-generated file and includes the mapping of your components. There is one component included here. In order to remove this component you can run the following command.
-
-
-- **Demo Components**
-
-A folder (unless the --empty flag was used) containing demo components are included in this workspace. These components are used to demonstrate the different features of Bit. If you would like to remove these components you can run the following command.
-
-```jsx
-bit remove "ui/*" --delete files
-```
-
-This removes the components from the bitmap as well as removes the files.
-
-
-- **.gitignore**
-
-Ignoring any files from version control
+Browse Component Library Here - https://bit.cloud/enlear/bit-landing-page-template/

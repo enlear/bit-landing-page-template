@@ -1,0 +1,48 @@
+---
+description: A StatSummary component.
+---
+
+import { StatSummary } from './stat-summary';
+import { LightTheme } from '@enlear/bit-landing-page-template.themes.light-theme';
+
+A component that accepts a series of statistics to count and counts it up from 0. Use with MUI Theming for breakpoint rendering.
+
+### Component usage
+
+```js
+<LightTheme>
+  <StatSummary statistics={[]} timerDuration={2} />
+</LightTheme>
+```
+
+### Render a stat counter with 2 second counting
+
+```js live
+<LightTheme>
+  <StatSummary
+    timerDuration={2}
+    statistics={[
+      {
+        label: 'Components',
+        value: 1000,
+        suffix: '+',
+      },
+      {
+        label: 'Contributors',
+        value: 1000,
+        suffix: '+',
+      },
+      {
+        label: 'Teams',
+        value: 1000,
+        suffix: '+',
+      },
+      {
+        label: 'Companies',
+        value: 1000,
+        suffix: '+',
+      },
+    ]}
+  />
+</LightTheme>
+```
