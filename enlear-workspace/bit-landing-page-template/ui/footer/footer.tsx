@@ -197,9 +197,9 @@ export function Footer({
                 ) && (
                   <Grid item md={9} sx={{ display: 'flex', gap: 2 }}>
                     {Object.entries(brand || {}).map(([key, value]) => (
-                      <Fragment>
+                      <Fragment key={key}>
                         {key !== 'brandLabel' && (
-                          <Link key={key} href={value} sx={{ ...linkSx }}>
+                          <Link href={value} sx={{ ...linkSx }}>
                             <Typography sx={{ ...linkSx }}>
                               {FooterBrandLabels[key as keyof FooterBrand]}
                             </Typography>

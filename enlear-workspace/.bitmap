@@ -21,6 +21,12 @@
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/layouts/content"
     },
+    "layouts/main": {
+        "scope": "enlear.bit-landing-page-template",
+        "version": "0.0.2",
+        "mainFile": "index.ts",
+        "rootDir": "bit-landing-page-template/layouts/main"
+    },
     "layouts/wrapper": {
         "scope": "enlear.bit-landing-page-template",
         "version": "0.0.2",
@@ -53,7 +59,7 @@
     },
     "pages/home": {
         "scope": "enlear.bit-landing-page-template",
-        "version": "0.0.7",
+        "version": "0.0.9",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/pages/home"
     },
@@ -65,13 +71,13 @@
     },
     "ui/footer": {
         "scope": "enlear.bit-landing-page-template",
-        "version": "0.0.5",
+        "version": "0.0.6",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/ui/footer"
     },
     "ui/header": {
         "scope": "enlear.bit-landing-page-template",
-        "version": "0.0.8",
+        "version": "0.0.9",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/ui/header"
     },

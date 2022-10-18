@@ -4,6 +4,7 @@ description: A Header component.
 
 import { Header } from './header';
 import { LightTheme } from '@enlear/bit-landing-page-template.themes.light-theme';
+import InfoIcon from '@mui/icons-material/Info';
 
 A component that does something special and renders text in a div.
 
@@ -11,14 +12,45 @@ A component that does something special and renders text in a div.
 
 ```js
 <LightTheme>
-  <Header />
+  <Header items={[]} />
 </LightTheme>
 ```
 
-### Render hello world!
+### Render sample menu
 
 ```js live
 <LightTheme>
-  <Header />
+  <Header
+    items={[
+      {
+        color: 'primary',
+        label: 'Item 1',
+        expandable: true,
+        sub: [
+          {
+            color: 'error',
+            description: 'Description of Item 01',
+            label: 'Item 01 Child 01',
+            href: '/subitem',
+            icon: <InfoIcon />,
+          },
+        ],
+      },
+      {
+        color: 'secondary',
+        label: 'Item 2',
+        expandable: true,
+        sub: [
+          {
+            color: 'error',
+            description: 'Description of Item 01',
+            label: 'Item 01 Child 01',
+            href: '/subitem',
+            icon: <InfoIcon />,
+          },
+        ],
+      },
+    ]}
+  />
 </LightTheme>
 ```
