@@ -154,7 +154,7 @@
         "rootDir": "bit-landing-page-template/widgets/typewriter"
     },
     "widgets/user-card": {
-        "scope": "",
+        "scope": "enlear.bit-landing-page-template",
         "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/widgets/user-card"
