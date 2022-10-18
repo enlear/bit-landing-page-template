@@ -4,6 +4,12 @@ description: A Main component.
 
 import { Main } from './main';
 import { LightTheme } from '@enlear/bit-landing-page-template.themes.light-theme';
+import InfoIcon from '@mui/icons-material/Info';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import EmailIcon from '@mui/icons-material/Email';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import { Avatar, alpha } from '@mui/material';
 
 A component that acts as a layout and places the app bar and footers that will wrap the content
 
@@ -11,7 +17,9 @@ A component that acts as a layout and places the app bar and footers that will w
 
 ```js
 <LightTheme>
-  <Main>{layoutChildren}</Main>
+  <Main headerItems={[]} footerItems={[]}>
+    {layoutChildren}
+  </Main>
 </LightTheme>
 ```
 
@@ -19,6 +27,116 @@ A component that acts as a layout and places the app bar and footers that will w
 
 ```js live
 <LightTheme>
-  <Main>Hello world!</Main>
+  <Main
+    headerItems={[
+      {
+        color: 'primary',
+        label: 'Item 1',
+        expandable: true,
+        sub: [
+          {
+            color: 'error',
+            description: 'Description of Item 01',
+            label: 'Item 01 Child 01',
+            href: '/subitem',
+            icon: <InfoIcon />,
+          },
+        ],
+      },
+      {
+        color: 'secondary',
+        label: 'Item 2',
+        expandable: true,
+        sub: [
+          {
+            color: 'error',
+            description: 'Description of Item 01',
+            label: 'Item 01 Child 01',
+            href: '/subitem',
+            icon: <InfoIcon />,
+          },
+        ],
+      },
+    ]}
+    footerItems={[
+      {
+        title: 'Volt',
+        kind: 'brand',
+        links: [
+          {
+            title: 'Facebook',
+            url: 'https://facebook.com',
+            icon: (
+              <Avatar
+                variant="rounded"
+                sx={{
+                  background: (theme) => alpha(theme.palette.info.main, 0.08),
+                  color: 'info.main',
+                  ':hover': {
+                    background: (theme) => alpha(theme.palette.info.main, 0.1),
+                  },
+                }}
+              >
+                <FacebookIcon />
+              </Avatar>
+            ),
+          },
+          {
+            title: 'LinkedIn',
+            url: 'https://linkedin.com',
+            icon: (
+              <Avatar
+                variant="rounded"
+                sx={{
+                  background: (theme) => alpha(theme.palette.info.main, 0.08),
+                  color: 'info.main',
+                  ':hover': {
+                    background: (theme) => alpha(theme.palette.info.main, 0.1),
+                  },
+                }}
+              >
+                <LinkedInIcon color="info" />
+              </Avatar>
+            ),
+          },
+          {
+            title: 'YouTube',
+            url: 'https://youtube.com',
+            icon: (
+              <Avatar
+                variant="rounded"
+                sx={{
+                  background: (theme) => alpha(theme.palette.error.main, 0.9),
+                  ':hover': {
+                    background: (theme) => alpha(theme.palette.error.main, 0.8),
+                  },
+                }}
+              >
+                <YouTubeIcon />
+              </Avatar>
+            ),
+          },
+        ],
+      },
+      {
+        title: 'Company',
+        kind: 'links',
+        links: [
+          {
+            title: 'About Us',
+            url: '/about',
+            icon: <InfoIcon />,
+          },
+          {
+            title: 'Contact',
+            url: '/contact',
+            icon: <EmailIcon />,
+          },
+        ],
+      },
+    ]}
+  >
+    hello world!
+  </Main>
 </LightTheme>
 ```

@@ -23,7 +23,7 @@
     },
     "layouts/main": {
         "scope": "enlear.bit-landing-page-template",
-        "version": "0.0.2",
+        "version": "0.0.4",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/layouts/main"
     },
@@ -57,9 +57,21 @@
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/navigation/web-menu-item"
     },
+    "pages/about": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "bit-landing-page-template/pages/about",
+        "config": {
+            "teambit.react/react": {},
+            "teambit.envs/envs": {
+                "env": "teambit.react/react"
+            }
+        }
+    },
     "pages/home": {
         "scope": "enlear.bit-landing-page-template",
-        "version": "0.0.9",
+        "version": "0.0.12",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/pages/home"
     },
@@ -71,7 +83,7 @@
     },
     "ui/footer": {
         "scope": "enlear.bit-landing-page-template",
-        "version": "0.0.6",
+        "version": "0.0.7",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/ui/footer"
     },
@@ -89,7 +101,7 @@
     },
     "ui/home/stat-summary": {
         "scope": "enlear.bit-landing-page-template",
-        "version": "0.0.2",
+        "version": "0.0.3",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/ui/home/stat-summary"
     },
@@ -98,6 +110,18 @@
         "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/widgets/button"
+    },
+    "widgets/content-card": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "bit-landing-page-template/widgets/content-card",
+        "config": {
+            "teambit.react/react": {},
+            "teambit.envs/envs": {
+                "env": "teambit.react/react"
+            }
+        }
     },
     "widgets/content-drop": {
         "scope": "enlear.bit-landing-page-template",
@@ -128,6 +152,12 @@
         "version": "0.0.5",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/widgets/typewriter"
+    },
+    "widgets/user-card": {
+        "scope": "",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "bit-landing-page-template/widgets/user-card"
     },
     "$schema-version": "15.0.0"
 }

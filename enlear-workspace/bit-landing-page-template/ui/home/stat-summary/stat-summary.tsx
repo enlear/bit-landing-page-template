@@ -56,10 +56,19 @@ export function StatSummary({ statistics, timerDuration }: StatSummaryProps) {
                 fontSize={30}
                 color="primary.main"
               >
-                <CountUp end={stat.value} duration={timerDuration} suffix={stat.suffix} />
+                <CountUp
+                  end={stat.value}
+                  duration={timerDuration}
+                  suffix={stat.suffix}
+                />
               </Typography>
               <Box sx={{ mt: 0.6 }}>
-                <Typography variant="body2" fontWeight={500} fontSize={16}>
+                <Typography
+                  variant="body2"
+                  fontWeight={500}
+                  fontSize={16}
+                  color="text.primary"
+                >
                   {stat.label}
                 </Typography>
               </Box>
@@ -82,6 +91,7 @@ export function StatSummary({ statistics, timerDuration }: StatSummaryProps) {
                       sm: 'none',
                       md: 'block',
                     },
+                    color: (theme) => theme.palette.text.primary,
                   }}
                 />
               </Box>
@@ -95,5 +105,5 @@ export function StatSummary({ statistics, timerDuration }: StatSummaryProps) {
 
 StatSummary.defaultProps = {
   statistics: [],
-  timerDuration: 0.7
+  timerDuration: 0.7,
 };

@@ -3,6 +3,8 @@ import React from 'react';
 import { StatSummary } from '@enlear/bit-landing-page-template.ui.home.stat-summary';
 import { Main } from '@enlear/bit-landing-page-template.layouts.main';
 import { StatSummaryItem } from '@enlear/bit-landing-page-template.ui.home.stat-summary';
+import { FooterItem } from '@enlear/bit-landing-page-template.ui.footer';
+import { MenuItem } from '@enlear/bit-landing-page-template.ui.header';
 
 export type HomeProps = {
   /**
@@ -13,11 +15,26 @@ export type HomeProps = {
    * the statistics to be counted up
    */
   statistics: StatSummaryItem[];
+
+  /**
+   * the header items to be rendered
+   */
+  headerItems: MenuItem[];
+
+  /**
+   * the footer items to be rendered
+   */
+  footerItems: FooterItem[];
 };
 
-export function Home({ heroContent, statistics }: HomeProps) {
+export function Home({
+  heroContent,
+  statistics,
+  headerItems,
+  footerItems,
+}: HomeProps) {
   return (
-    <Main>
+    <Main headerItems={headerItems} footerItems={footerItems}>
       <Hero>{heroContent}</Hero>
       <StatSummary statistics={statistics} />
     </Main>

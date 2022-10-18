@@ -92,7 +92,13 @@ export function Footer({
               lg={4}
               xl={4}
             >
-              <Typography sx={{ fontSize: 13.5, fontWeight: 500 }}>
+              <Typography
+                sx={{
+                  fontSize: 13.5,
+                  fontWeight: 500,
+                  color: (theme) => theme.palette.text.primary,
+                }}
+              >
                 {item.title}
               </Typography>
               {item.kind === 'brand' && (
@@ -184,6 +190,7 @@ export function Footer({
                     <Typography
                       sx={{
                         fontSize: 13,
+                        color: (theme) => theme.palette.text.primary,
                       }}
                     >
                       {brand?.brandLabel}
