@@ -1,4 +1,7 @@
-import { FooterItem } from "@enlear/bit-landing-page-template.ui.footer";
+import {
+  FooterItem,
+  FooterBrand,
+} from "@enlear/bit-landing-page-template.ui.footer";
 import { MenuItem } from "@enlear/bit-landing-page-template.ui.header";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
@@ -64,7 +67,15 @@ const footerItems: FooterItem[] = [
   },
 ];
 
+const footerBrand: FooterBrand = {
+  brandLabel: "Volt",
+  cookieUrl: "/cookie-policy",
+  privacyUrl: "/privacy-policy",
+  termsUrl: "/terms-of-service",
+};
+
 export const navBarItems = {
   headerItems,
   footerItems,
+  footerBrand,
 };

@@ -42,6 +42,7 @@ const Home: NextPage = () => {
         ]}
         headerItems={navBarItems.headerItems}
         footerItems={navBarItems.footerItems}
+        footerBrand={navBarItems.footerBrand}
       />
     </>
   );
