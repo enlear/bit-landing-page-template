@@ -25,6 +25,11 @@ export type HomeProps = {
    * the footer items to be rendered
    */
   footerItems: FooterItem[];
+
+  /**
+   * any additional children to be displayed after statsitics, but above footer
+   */
+  children?: React.ReactNode;
 };
 
 export function Home({
@@ -32,11 +37,13 @@ export function Home({
   statistics,
   headerItems,
   footerItems,
+  children,
 }: HomeProps) {
   return (
     <Main headerItems={headerItems} footerItems={footerItems}>
       <Hero>{heroContent}</Hero>
       <StatSummary statistics={statistics} />
+      {children}
     </Main>
   );
 }

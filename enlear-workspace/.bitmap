@@ -58,20 +58,14 @@
         "rootDir": "bit-landing-page-template/navigation/web-menu-item"
     },
     "pages/about": {
-        "scope": "",
-        "version": "",
+        "scope": "enlear.bit-landing-page-template",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "bit-landing-page-template/pages/about",
-        "config": {
-            "teambit.react/react": {},
-            "teambit.envs/envs": {
-                "env": "teambit.react/react"
-            }
-        }
+        "rootDir": "bit-landing-page-template/pages/about"
     },
     "pages/home": {
         "scope": "enlear.bit-landing-page-template",
-        "version": "0.0.12",
+        "version": "0.0.13",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/pages/home"
     },
@@ -112,16 +106,10 @@
         "rootDir": "bit-landing-page-template/widgets/button"
     },
     "widgets/content-card": {
-        "scope": "",
-        "version": "",
+        "scope": "enlear.bit-landing-page-template",
+        "version": "0.0.2",
         "mainFile": "index.ts",
-        "rootDir": "bit-landing-page-template/widgets/content-card",
-        "config": {
-            "teambit.react/react": {},
-            "teambit.envs/envs": {
-                "env": "teambit.react/react"
-            }
-        }
+        "rootDir": "bit-landing-page-template/widgets/content-card"
     },
     "widgets/content-drop": {
         "scope": "enlear.bit-landing-page-template",
@@ -134,6 +122,12 @@
         "version": "0.0.5",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/widgets/content-item"
+    },
+    "widgets/cover-image": {
+        "scope": "enlear.bit-landing-page-template",
+        "version": "0.0.2",
+        "mainFile": "index.ts",
+        "rootDir": "bit-landing-page-template/widgets/cover-image"
     },
     "widgets/icon-button": {
         "scope": "enlear.bit-landing-page-template",
@@ -155,7 +149,7 @@
     },
     "widgets/user-card": {
         "scope": "enlear.bit-landing-page-template",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/widgets/user-card"
     },
