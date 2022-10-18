@@ -9,3 +9,5 @@ The `enlear-workspace` directory is the local workspace that we have used to dev
 The `landing-page-template` directory contains a NextJS project that uses the components designed by Bit
 
 If you plan on customizing the Bit components, you can open the `enlear-workspace` and navigate to the `workspace.jsonc` and update the default scope. Or you can create a new bit workspace and import the components that you need, customize it and export it to your desired scope.
+
+Browse Component Library Here - https://bit.cloud/enlear/bit-landing-page-template/
