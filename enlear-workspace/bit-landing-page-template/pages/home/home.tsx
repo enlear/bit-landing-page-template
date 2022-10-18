@@ -5,6 +5,7 @@ import { Main } from '@enlear/bit-landing-page-template.layouts.main';
 import { StatSummaryItem } from '@enlear/bit-landing-page-template.ui.home.stat-summary';
 import { FooterItem } from '@enlear/bit-landing-page-template.ui.footer';
 import { MenuItem } from '@enlear/bit-landing-page-template.ui.header';
+import { FooterBrand } from '@enlear/bit-landing-page-template.ui.footer';
 
 export type HomeProps = {
   /**
@@ -27,6 +28,11 @@ export type HomeProps = {
   footerItems: FooterItem[];
 
   /**
+   * the footer brand information
+   */
+  footerBrand?: FooterBrand;
+
+  /**
    * any additional children to be displayed after statsitics, but above footer
    */
   children?: React.ReactNode;
@@ -37,10 +43,15 @@ export function Home({
   statistics,
   headerItems,
   footerItems,
+  footerBrand,
   children,
 }: HomeProps) {
   return (
-    <Main headerItems={headerItems} footerItems={footerItems}>
+    <Main
+      headerItems={headerItems}
+      footerItems={footerItems}
+      footerBrand={footerBrand}
+    >
       <Hero>{heroContent}</Hero>
       <StatSummary statistics={statistics} />
       {children}

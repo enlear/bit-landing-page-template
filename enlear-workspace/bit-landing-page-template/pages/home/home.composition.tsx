@@ -175,6 +175,12 @@ export const BasicHome = () => {
             suffix: '+',
           },
         ]}
+        footerBrand={{
+          brandLabel: '© 2022 Volt. All Rights Reserved.',
+          termsUrl: '/terms',
+          privacyUrl: '/privacy',
+          cookieUrl: '/cookie',
+        }}
       />
     </LightTheme>
   );

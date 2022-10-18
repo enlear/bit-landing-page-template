@@ -5,6 +5,7 @@ import {
   FooterItem,
 } from '@enlear/bit-landing-page-template.ui.footer';
 import { Header, MenuItem } from '@enlear/bit-landing-page-template.ui.header';
+import { FooterBrand } from '@enlear/bit-landing-page-template.ui.footer';
 
 export type MainProps = {
   /**
@@ -21,21 +22,26 @@ export type MainProps = {
    * the footer items to be rendered
    */
   footerItems: FooterItem[];
+
+  /**
+   * the terms, privacy, cookie and brand information
+   */
+  footerBrand?: FooterBrand;
 };
 
-export function Main({ children, headerItems, footerItems }: MainProps) {
+export function Main({
+  children,
+  headerItems,
+  footerItems,
+  footerBrand,
+}: MainProps) {
   return (
     <Content>
       <Header items={headerItems} />
       {children}
       <Footer
         items={footerItems}
-        brand={{
-          brandLabel: '© 2022 Volt. All Rights Reserved.',
-          termsUrl: '/terms',
-          privacyUrl: '/privacy',
-          cookieUrl: '/cookie',
-        }}
+        brand={footerBrand}
       />
     </Content>
   );

@@ -17,7 +17,11 @@ A component that acts as a layout and places the app bar and footers that will w
 
 ```js
 <LightTheme>
-  <Main headerItems={[]} footerItems={[]}>
+  <Main
+    headerItems={[]}
+    footerItems={[]}
+    footerBrand={undefined}
+  >
     {layoutChildren}
   </Main>
 </LightTheme>
@@ -135,6 +139,12 @@ A component that acts as a layout and places the app bar and footers that will w
         ],
       },
     ]}
+    footerBrand={{
+      brandLabel: '© 2022 Volt. All Rights Reserved.',
+      termsUrl: '/terms',
+      privacyUrl: '/privacy',
+      cookieUrl: '/cookie',
+    }}
   >
     hello world!
   </Main>

@@ -122,7 +122,16 @@ const footerItems: FooterItem[] = [
 export const BasicMain = () => {
   return (
     <LightTheme>
-      <Main headerItems={headerItems} footerItems={footerItems}>
+      <Main
+        headerItems={headerItems}
+        footerItems={footerItems}
+        footerBrand={{
+          brandLabel: '© 2022 Volt. All Rights Reserved.',
+          termsUrl: '/terms',
+          privacyUrl: '/privacy',
+          cookieUrl: '/cookie',
+        }}
+      >
         hello world!
       </Main>
     </LightTheme>
