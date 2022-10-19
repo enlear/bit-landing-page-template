@@ -2,14 +2,15 @@ import React, { ReactNode } from 'react';
 
 export type LogoProps = {
   /**
-   * a node to be rendered in the special component.
+   * an svg component to render the application logo.
    */
-  children?: ReactNode;
+  logo?: React.ReactNode;
 };
 
-export function Logo({ children }: LogoProps) {
-  return (
+export function Logo({ logo }: LogoProps) {
+  const svg = logo || (
     <svg
+      data-testid="logo"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       width="100"
@@ -3462,4 +3463,5 @@ export function Logo({ children }: LogoProps) {
       </g>
     </svg>
   );
+  return <>{svg}</>;
 }

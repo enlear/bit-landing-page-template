@@ -468,10 +468,18 @@ export type LightThemeProps = {
    * The children to render within the theme provided.
    */
   children?: ReactNode;
+
+  /**
+   * theme properties to override default behavior
+   */
+  theme?: ThemeOptions;
 };
 
-export function LightTheme({ children }: LightThemeProps) {
-  const theme = useMemo(() => createTheme(lightThemeOptions), []);
+export function LightTheme({ children, theme: customTheme }: LightThemeProps) {
+  const theme = useMemo(
+    () => createTheme(customTheme || lightThemeOptions),
+    []
+  );
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 }
 
