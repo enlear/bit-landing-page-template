@@ -15,7 +15,7 @@ export type ContentProps = {
 
 const ContentLayoutRoot = styled('div')<{ paddingTop: number }>(
   ({ theme, paddingTop }) => ({
-    backgroundColor: theme.palette.background.default,
+    backgroundColor: theme.palette.background.paper,
     height: '100%',
     width: '100%',
     paddingTop: paddingTop,
