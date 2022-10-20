@@ -137,7 +137,7 @@
     },
     "widgets/logo-showcase": {
         "scope": "enlear.bit-landing-page-template",
-        "version": "0.0.8",
+        "version": "0.0.9",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/widgets/logo-showcase"
     },

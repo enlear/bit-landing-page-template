@@ -7,20 +7,25 @@ export const BasicLogoShowcase = () => {
       images={[
         {
           src: 'https://static.bit.dev/bit-logo.svg',
-          alt: 'bit logo'
+          alt: 'bit logo',
+          name: 'Bit'
         },
         {
           src: 'https://static.bit.dev/bit-logo.svg',
-          alt: 'bit logo'
+          alt: 'bit logo',
+          name: 'Bit'
         },
         {
           src: 'https://static.bit.dev/bit-logo.svg',
-          alt: 'bit logo'
+          alt: 'bit logo',
+          name: 'Bit'
         },
         {
           src: 'https://static.bit.dev/bit-logo.svg',
-          alt: 'bit logo'
-        }
+          alt: 'bit logo',
+          name: 'Bit'
+        },
+
       ]}
     />
   );

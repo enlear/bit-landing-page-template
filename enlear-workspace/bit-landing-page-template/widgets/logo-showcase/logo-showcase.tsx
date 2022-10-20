@@ -1,4 +1,6 @@
+import { Typography } from '@mui/material';
 import { keyframes } from '@mui/material';
+import { Chip } from '@mui/material';
 import { Box, SxProps } from '@mui/material';
 import React from 'react';
 import { ShowCaseImage } from './logo-showcase.types';
@@ -22,7 +24,7 @@ export type LogoShowcaseProps = {
 
   /**
    * time taken for animation in seconds
-   * @default 0.5
+   * @default 20
    */
   animationTime?: number
 };
@@ -36,7 +38,7 @@ const conveyerBelt = keyframes`
   }
 `;
 
-export function LogoShowcase({ images = [], sx, size = '85px', animationTime = 0.5 }: LogoShowcaseProps) {
+export function LogoShowcase({ images = [], sx, size = '85px', animationTime = 20 }: LogoShowcaseProps) {
   return (
     <Box
       sx={{
@@ -67,12 +69,26 @@ export function LogoShowcase({ images = [], sx, size = '85px', animationTime = 0
     >
       {
         images.map((image, index) => (
-          <img
+          <Box
             key={index}
-            src={image.src}
-            alt={image.alt}
-            style={{ width: size, height: size, borderRadius: '100%' }}
-          />
+          >
+            <img
+              src={image.src}
+              alt={image.alt}
+              style={{ width: size, height: size, borderRadius: '100%' }}
+            />
+            {image.name && (
+              <Typography
+                textAlign={"center"}
+                variant='body2'
+                fontSize={16}
+                marginTop={3.5}
+                fontWeight={500}
+              >
+                {image.name}
+              </Typography>
+            )}
+          </Box>
         ))
       }
     </Box >
