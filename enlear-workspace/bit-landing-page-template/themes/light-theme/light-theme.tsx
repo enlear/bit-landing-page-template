@@ -476,10 +476,8 @@ export type LightThemeProps = {
 };
 
 export function LightTheme({ children, theme: customTheme }: LightThemeProps) {
-  const theme = useMemo(
-    () => createTheme(customTheme || lightThemeOptions),
-    []
-  );
+  const themeOptionsToUse = customTheme || lightThemeOptions;
+  const theme = useMemo(() => createTheme(themeOptionsToUse), [themeOptionsToUse]);
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 }
 

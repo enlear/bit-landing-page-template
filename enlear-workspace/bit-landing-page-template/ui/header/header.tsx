@@ -9,13 +9,29 @@ export type HeaderProps = {
    * the menu items to render on navbar and sidebar
    */
   items: MenuItem[];
+
+  /**
+   * the CTA label to render
+   * @default 'Get In Touch'
+   */
+  ctaLabel?: string;
+
+  /**
+   * app logo to render on navbar
+   */
+  logo?: React.ReactNode;
+
+  /**
+   * callback executed when cta is clicked
+   */
+  onCtaClick?: () => void;
 };
 
-export function Header({ items }: HeaderProps) {
+export function Header({ items, ctaLabel = 'Get In Touch', logo, onCtaClick }: HeaderProps) {
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
   const lgUp = useMediaQuery((theme: Theme) => theme.breakpoints.up('lg'));
 
-  const handleCtaClick = useCallback(() => {}, []);
+  const handleCtaClick = useCallback(() => { onCtaClick?.() }, []);
 
   const handleMenuIconClick = useCallback(() => {
     setIsSidebarOpen((prevState) => !prevState);
@@ -27,12 +43,15 @@ export function Header({ items }: HeaderProps) {
         onMenuIconClick={handleMenuIconClick}
         onCtaClick={handleCtaClick}
         items={items}
-        ctaLabel="Get In Touch"
+        ctaLabel={ctaLabel}
+        withMdBreakpoint
+        logo={logo}
       />
       <Sidebar
         items={items}
         onClose={() => setIsSidebarOpen(false)}
         open={isSidebarOpen && !lgUp}
+        logo={logo}
       />
     </>
   );

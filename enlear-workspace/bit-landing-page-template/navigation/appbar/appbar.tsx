@@ -14,16 +14,16 @@ export type SubMenuItem = {
   href: string;
   description: string;
   color:
-    | 'primary'
-    | 'secondary'
-    | 'error'
-    | 'warning'
-    | 'info'
-    | 'success'
-    | 'action'
-    | 'inherit'
-    | 'disabled'
-    | undefined;
+  | 'primary'
+  | 'secondary'
+  | 'error'
+  | 'warning'
+  | 'info'
+  | 'success'
+  | 'action'
+  | 'inherit'
+  | 'disabled'
+  | undefined;
   icon: React.ReactNode;
 };
 
@@ -33,16 +33,16 @@ export type MenuItem = {
   expandable?: boolean;
   sub: Array<SubMenuItem>;
   color:
-    | 'primary'
-    | 'secondary'
-    | 'error'
-    | 'warning'
-    | 'info'
-    | 'success'
-    | 'action'
-    | 'inherit'
-    | 'disabled'
-    | undefined;
+  | 'primary'
+  | 'secondary'
+  | 'error'
+  | 'warning'
+  | 'info'
+  | 'success'
+  | 'action'
+  | 'inherit'
+  | 'disabled'
+  | undefined;
 };
 
 export type AppbarProps = {
@@ -125,13 +125,16 @@ export function Appbar(props: AppbarProps) {
               justifyContent: 'space-between',
             }}
           >
-            <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
+            <Box sx={{ display: 'flex', gap: 2, alignItems: 'center', justifyContent: 'space-between' }}>
               {logo && (
                 <Link underline="none" href="/">
-                  {logo}
+                  <Logo
+                    logo={logo}
+                  />
                 </Link>
               )}
-
+            </Box>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
               <Wrapper
                 condition={withMdBreakpoint}
                 wrapper={(children) => (
@@ -153,23 +156,23 @@ export function Appbar(props: AppbarProps) {
                   <WebMenuItem key={idx} item={item} />
                 ))}
               </Wrapper>
-            </Box>
-            <Box sx={{ display: 'flex', gap: 1 }}>
-              <Button variant="outlined" color="primary" onClick={onCtaClick}>
-                {ctaLabel}
-              </Button>
-              <IconButton
-                icon="hamburger"
-                iconSize="medium"
-                sx={{
-                  display: {
-                    sm: 'flex',
-                    xs: 'flex',
-                    md: 'none',
-                  },
-                }}
-                onClick={handleMenuIconClick}
-              />
+              <Box sx={{ display: 'flex', gap: 1 }}>
+                <Button variant="outlined" color="primary" onClick={onCtaClick}>
+                  {ctaLabel}
+                </Button>
+                <IconButton
+                  icon="hamburger"
+                  iconSize="medium"
+                  sx={{
+                    display: {
+                      sm: 'flex',
+                      xs: 'flex',
+                      md: 'none',
+                    },
+                  }}
+                  onClick={handleMenuIconClick}
+                />
+              </Box>
             </Box>
           </Toolbar>
         </Container>

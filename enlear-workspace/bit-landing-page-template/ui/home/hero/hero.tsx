@@ -1,5 +1,5 @@
 import { Container } from '@enlear/bit-landing-page-template.layouts.container';
-import { useTheme } from '@mui/material';
+import { useTheme, SxProps } from '@mui/material';
 import { Box } from '@mui/material';
 import React, { ReactNode } from 'react';
 
@@ -8,9 +8,14 @@ export type HeroProps = {
    * the children to be rendered within the hero container.
    */
   children?: ReactNode;
+
+  /**
+   * custom container styling to override default styling.
+   */
+  containerStyle?: SxProps;
 };
 
-export function Hero({ children }: HeroProps) {
+export function Hero({ children, containerStyle }: HeroProps) {
   const theme = useTheme();
   return (
     <Box
@@ -24,7 +29,7 @@ export function Hero({ children }: HeroProps) {
     >
       <Container
         maxWidth="md"
-        sx={{
+        sx={containerStyle || {
           alignItems: 'center',
           display: 'flex',
           flexDirection: 'column',

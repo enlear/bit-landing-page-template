@@ -17,16 +17,16 @@ export type SubMenuItem = {
   href: string;
   description: string;
   color:
-    | 'primary'
-    | 'secondary'
-    | 'error'
-    | 'warning'
-    | 'info'
-    | 'success'
-    | 'action'
-    | 'inherit'
-    | 'disabled'
-    | undefined;
+  | 'primary'
+  | 'secondary'
+  | 'error'
+  | 'warning'
+  | 'info'
+  | 'success'
+  | 'action'
+  | 'inherit'
+  | 'disabled'
+  | undefined;
   icon: React.ReactNode;
 };
 
@@ -36,16 +36,16 @@ export type MenuItem = {
   expandable?: boolean;
   sub: Array<SubMenuItem>;
   color:
-    | 'primary'
-    | 'secondary'
-    | 'error'
-    | 'warning'
-    | 'info'
-    | 'success'
-    | 'action'
-    | 'inherit'
-    | 'disabled'
-    | undefined;
+  | 'primary'
+  | 'secondary'
+  | 'error'
+  | 'warning'
+  | 'info'
+  | 'success'
+  | 'action'
+  | 'inherit'
+  | 'disabled'
+  | undefined;
 };
 
 export type SidebarProps = {
@@ -63,9 +63,14 @@ export type SidebarProps = {
    * open/close the drawer
    */
   open: boolean;
+
+  /**
+   * logo to render on screen
+   */
+  logo?: React.ReactNode;
 };
 
-export function Sidebar({ items, onClose, open }: SidebarProps) {
+export function Sidebar({ items, onClose, open, logo }: SidebarProps) {
   return (
     <Drawer
       anchor="left"
@@ -87,45 +92,58 @@ export function Sidebar({ items, onClose, open }: SidebarProps) {
         }}
       >
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Logo />
+          <Logo
+            logo={logo}
+          />
         </Box>
         <IconButton icon="close" onClick={() => onClose()} />
       </Box>
-      {items.map((item, itemIdx) => (
-        <Accordion
-          key={itemIdx}
-          onChange={() => {
-            if (!item.href) {
-            }
-          }}
-        >
-          <AccordionSummary
-            {...(item.sub.length > 0 && {
-              expandIcon: <ExpandMoreIcon />,
-            })}
+      <Box sx={{ my: 10, mx: 3 }}>
+        {items.map((item, itemIdx) => (
+          <Accordion
+            key={itemIdx}
+            variant='outlined'
+            sx={{ border: 'none' }}
+            onChange={() => {
+              if (!item.href) {
+              }
+            }}
           >
-            <Typography variant="body2" fontSize={18}>
-              {item.label}
-            </Typography>
-          </AccordionSummary>
-          {item.sub.length > 0 && (
-            <AccordionDetails>
-              {item.sub.map((detailedMenu, detailedMenuIdx) => (
-                <ContentItem
-                  key={detailedMenuIdx}
-                  item={{
-                    color: detailedMenu.color,
-                    description: detailedMenu.description,
-                    icon: detailedMenu.icon,
-                    name: detailedMenu.label,
-                    href: detailedMenu.href,
+            <AccordionSummary
+              {...(item.sub.length > 0 && {
+                expandIcon: <ExpandMoreIcon
+                  fontWeight={600}
+                  sx={{
+                    color: (theme) => theme.palette.text.primary,
                   }}
-                />
-              ))}
-            </AccordionDetails>
-          )}
-        </Accordion>
-      ))}
+                />,
+              })}
+            >
+              <Typography variant="body2" fontSize={26}
+                fontWeight={600}
+              >
+                {item.label}
+              </Typography>
+            </AccordionSummary>
+            {item.sub.length > 0 && (
+              <AccordionDetails>
+                {item.sub.map((detailedMenu, detailedMenuIdx) => (
+                  <ContentItem
+                    key={detailedMenuIdx}
+                    item={{
+                      color: detailedMenu.color,
+                      description: detailedMenu.description,
+                      icon: detailedMenu.icon,
+                      name: detailedMenu.label,
+                      href: detailedMenu.href,
+                    }}
+                  />
+                ))}
+              </AccordionDetails>
+            )}
+          </Accordion>
+        ))}
+      </Box>
     </Drawer>
   );
 }
