@@ -28,16 +28,8 @@ export const BasicAppbar = () => (
         {
           color: 'secondary',
           label: 'Item 2',
-          expandable: true,
-          sub: [
-            {
-              color: 'error',
-              description: 'Description of Item 01',
-              label: 'Item 01 Child 01',
-              href: '/subitem',
-              icon: <InfoIcon />,
-            },
-          ],
+          expandable: false,
+          sub: [],
         },
       ]}
       onMenuIconClick={() => alert('You clicked the menu icon, inflate a drawer')}

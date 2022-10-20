@@ -142,6 +142,7 @@ export function Appbar(props: AppbarProps) {
                       xs: 'none',
                       md: 'flex',
                     },
+                    alignItems: 'center',
                     gap: 2,
                   }}
                 >
