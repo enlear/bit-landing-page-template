@@ -1,4 +1,3 @@
-import { Avatar } from '@mui/material';
 import { keyframes } from '@mui/material';
 import { Box, SxProps } from '@mui/material';
 import React from 'react';
@@ -14,6 +13,12 @@ export type LogoShowcaseProps = {
    * additional sx props for box
    */
   sx?: SxProps;
+
+  /**
+   * image size in pixels
+   * @default 85px
+   */
+  size?: string
 };
 
 const conveyerBelt = keyframes`
@@ -25,39 +30,42 @@ const conveyerBelt = keyframes`
   }
 `;
 
-export function LogoShowcase({ images = [], sx }: LogoShowcaseProps) {
+export function LogoShowcase({ images = [], sx, size = '85px' }: LogoShowcaseProps) {
   return (
     <Box
       sx={{
         display: 'flex',
         width: '100%',
         whiteSpace: 'nowrap',
-        imageRendering: 'crisp-edges',
         animation: `${conveyerBelt} 30s linear infinite`,
         '& > *': {
-          width: 100,
-          height: 100,
-          padding: 3,
+          width: size,
+          height: size,
+          padding: '24px',
+          borderRadius: '100%',
           background: 'var(--surface-color, #ffffff)',
           boxShadow: ' 0px 8px 20px rgba(30, 30, 30, 0.1)',
           backfaceVisibility: 'hidden',
-          mx: 10
+          transform: 'translateZ(0)',
+          marginLeft: '80px',
+          marginRight: '80px',
         },
         '> :nth-child(even)': {
-          mt: 10,
+          marginTop: '40px',
         },
         '> :nth-child(odd)': {
-          mb: 10,
+          marginBottom: '40px',
         },
         ...sx && { sx },
       }}
     >
       {
         images.map((image, index) => (
-          <Avatar
+          <img
             key={index}
             src={image.src}
             alt={image.alt}
+            style={{ width: size, height: size, borderRadius: '100%' }}
           />
         ))
       }

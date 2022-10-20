@@ -136,8 +136,8 @@
         "rootDir": "bit-landing-page-template/widgets/logo"
     },
     "widgets/logo-showcase": {
-        "scope": "",
-        "version": "0.0.1",
+        "scope": "enlear.bit-landing-page-template",
+        "version": "0.0.3",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/widgets/logo-showcase"
     },
