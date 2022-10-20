@@ -1,6 +1,5 @@
 import { Container } from '@enlear/bit-landing-page-template.layouts.container';
-import { Hidden } from '@mui/material';
-import { Typography } from '@mui/material';
+import { Typography, SxProps } from '@mui/material';
 import { Box } from '@mui/material';
 import React from 'react';
 import { Fragment } from 'react';
@@ -18,15 +17,21 @@ export type StatSummaryProps = {
    * The counting duration in seconds
    */
   timerDuration?: number;
+
+  /**
+   * additional sx props
+   */
+  sx?: SxProps;
 };
 
-export function StatSummary({ statistics, timerDuration }: StatSummaryProps) {
+export function StatSummary({ statistics, timerDuration, sx }: StatSummaryProps) {
   return (
     <Box
       sx={{
         width: '100%',
-        backgroundColor: 'background.paper',
         py: 8,
+        backgroundColor: 'background.paper',
+        ...sx && { ...sx },
       }}
     >
       <Container

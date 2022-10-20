@@ -17,13 +17,13 @@
     },
     "layouts/content": {
         "scope": "enlear.bit-landing-page-template",
-        "version": "0.0.6",
+        "version": "0.0.7",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/layouts/content"
     },
     "layouts/main": {
         "scope": "enlear.bit-landing-page-template",
-        "version": "0.0.11",
+        "version": "0.0.12",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/layouts/main"
     },
@@ -59,7 +59,7 @@
     },
     "pages/home": {
         "scope": "enlear.bit-landing-page-template",
-        "version": "0.0.20",
+        "version": "0.0.22",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/pages/home"
     },
@@ -89,7 +89,7 @@
     },
     "ui/home/stat-summary": {
         "scope": "enlear.bit-landing-page-template",
-        "version": "0.0.6",
+        "version": "0.0.7",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/ui/home/stat-summary"
     },
