@@ -4,6 +4,7 @@ import { Card } from '@mui/material';
 import React from 'react';
 import { format } from 'date-fns';
 import { CoverImage } from '@enlear/bit-landing-page-template.widgets.cover-image';
+import { SxProps } from '@mui/material';
 
 export type ContentCardProps = {
   /**
@@ -46,6 +47,15 @@ export type ContentCardProps = {
    * the tags of the content
    */
   tags: string[];
+  /**
+   * card sx
+   */
+  sx?: SxProps
+
+  /**
+   * card variant
+   */
+  variant?: 'outlined' | 'elevation';
 };
 
 export function ContentCard({
@@ -59,16 +69,19 @@ export function ContentCard({
   tags,
   title,
   views,
+  sx,
+  variant = 'outlined',
 }: ContentCardProps) {
   return (
     <Link color="textPrimary" href={publishUrl} variant="h5">
       <Card
+        variant={variant}
         sx={{
           p: 2,
           backgroundColor: 'background.paper',
           height: '100%',
           width: '100%',
-          maxWidth: 400,
+          ...sx && { ...sx }
         }}
       >
         <Box sx={{ mt: 2 }}>
