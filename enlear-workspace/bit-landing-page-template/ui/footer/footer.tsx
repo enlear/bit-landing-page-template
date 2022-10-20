@@ -160,6 +160,7 @@ export function Footer({
                   fontWeight: 500,
                   ml: -2,
                   color: theme.palette.text.primary,
+                  textTransform: 'none',
                 }}
                 onClick={onCtaClick}
                 endIcon={<ArrowForwardIcon />}
@@ -202,20 +203,20 @@ export function Footer({
                   brand?.privacyUrl ||
                   brand?.termsUrl
                 ) && (
-                  <Grid item md={9} sx={{ display: 'flex', gap: 2 }}>
-                    {Object.entries(brand || {}).map(([key, value]) => (
-                      <Fragment key={key}>
-                        {key !== 'brandLabel' && (
-                          <Link href={value} sx={{ ...linkSx }}>
-                            <Typography sx={{ ...linkSx }}>
-                              {FooterBrandLabels[key as keyof FooterBrand]}
-                            </Typography>
-                          </Link>
-                        )}
-                      </Fragment>
-                    ))}
-                  </Grid>
-                )}
+                    <Grid item md={9} sx={{ display: 'flex', gap: 2 }}>
+                      {Object.entries(brand || {}).map(([key, value]) => (
+                        <Fragment key={key}>
+                          {key !== 'brandLabel' && (
+                            <Link href={value} sx={{ ...linkSx }}>
+                              <Typography sx={{ ...linkSx }}>
+                                {FooterBrandLabels[key as keyof FooterBrand]}
+                              </Typography>
+                            </Link>
+                          )}
+                        </Fragment>
+                      ))}
+                    </Grid>
+                  )}
               </Grid>
             </Box>
           </Fragment>

@@ -1,9 +1,7 @@
 import React, { ReactNode } from 'react';
 import { AppBar as MUIAppBar, Toolbar, Box, Link } from '@mui/material';
-
 import { Container } from '@enlear/bit-landing-page-template.layouts.container';
 import { Wrapper } from '@enlear/bit-landing-page-template.layouts.wrapper';
-import { LightTheme } from '@enlear/bit-landing-page-template.themes.light-theme';
 import { Logo } from '@enlear/bit-landing-page-template.widgets.logo';
 import { Button } from '@enlear/bit-landing-page-template.widgets.button';
 import { IconButton } from '@enlear/bit-landing-page-template.widgets.icon-button';
@@ -108,76 +106,74 @@ export function Appbar(props: AppbarProps) {
     onMenuIconClick();
   };
   return (
-    <LightTheme>
-      <MUIAppBar
-        elevation={0}
-        sx={{
-          backgroundColor: (theme) => theme.palette.background.paper,
-        }}
-      >
-        <Container maxWidth={maxContainerWidth}>
-          <Toolbar
-            disableGutters
-            sx={{
-              minHeight,
-              alignItems: 'center',
-              display: 'flex',
-              justifyContent: 'space-between',
-            }}
-          >
-            <Box sx={{ display: 'flex', gap: 2, alignItems: 'center', justifyContent: 'space-between' }}>
-              {logo && (
-                <Link underline="none" href="/">
-                  <Logo
-                    logo={logo}
-                  />
-                </Link>
-              )}
-            </Box>
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-              <Wrapper
-                condition={withMdBreakpoint}
-                wrapper={(children) => (
-                  <Box
-                    sx={{
-                      display: {
-                        sm: 'none',
-                        xs: 'none',
-                        md: 'flex',
-                      },
-                      gap: 2,
-                    }}
-                  >
-                    {children}
-                  </Box>
-                )}
-              >
-                {items.map((item, idx) => (
-                  <WebMenuItem key={idx} item={item} />
-                ))}
-              </Wrapper>
-              <Box sx={{ display: 'flex', gap: 1 }}>
-                <Button variant="outlined" color="primary" onClick={onCtaClick}>
-                  {ctaLabel}
-                </Button>
-                <IconButton
-                  icon="hamburger"
-                  iconSize="medium"
+    <MUIAppBar
+      elevation={0}
+      sx={{
+        backgroundColor: (theme) => theme.palette.background.paper,
+      }}
+    >
+      <Container maxWidth={maxContainerWidth}>
+        <Toolbar
+          disableGutters
+          sx={{
+            minHeight,
+            alignItems: 'center',
+            display: 'flex',
+            justifyContent: 'space-between',
+          }}
+        >
+          <Box sx={{ display: 'flex', gap: 2, alignItems: 'center', justifyContent: 'space-between' }}>
+            {logo && (
+              <Link underline="none" href="/">
+                <Logo
+                  logo={logo}
+                />
+              </Link>
+            )}
+          </Box>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+            <Wrapper
+              condition={withMdBreakpoint}
+              wrapper={(children) => (
+                <Box
                   sx={{
                     display: {
-                      sm: 'flex',
-                      xs: 'flex',
-                      md: 'none',
+                      sm: 'none',
+                      xs: 'none',
+                      md: 'flex',
                     },
+                    gap: 2,
                   }}
-                  onClick={handleMenuIconClick}
-                />
-              </Box>
+                >
+                  {children}
+                </Box>
+              )}
+            >
+              {items.map((item, idx) => (
+                <WebMenuItem key={idx} item={item} />
+              ))}
+            </Wrapper>
+            <Box sx={{ display: 'flex', gap: 1 }}>
+              <Button variant="outlined" color="primary" onClick={onCtaClick}>
+                {ctaLabel}
+              </Button>
+              <IconButton
+                icon="hamburger"
+                iconSize="medium"
+                sx={{
+                  display: {
+                    sm: 'flex',
+                    xs: 'flex',
+                    md: 'none',
+                  },
+                }}
+                onClick={handleMenuIconClick}
+              />
             </Box>
-          </Toolbar>
-        </Container>
-      </MUIAppBar>
-    </LightTheme>
+          </Box>
+        </Toolbar>
+      </Container>
+    </MUIAppBar>
   );
 }
 

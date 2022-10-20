@@ -19,6 +19,12 @@ export type LogoShowcaseProps = {
    * @default 85px
    */
   size?: string
+
+  /**
+   * time taken for animation in seconds
+   * @default 0.5
+   */
+  animationTime?: number
 };
 
 const conveyerBelt = keyframes`
@@ -30,14 +36,14 @@ const conveyerBelt = keyframes`
   }
 `;
 
-export function LogoShowcase({ images = [], sx, size = '85px' }: LogoShowcaseProps) {
+export function LogoShowcase({ images = [], sx, size = '85px', animationTime = 0.5 }: LogoShowcaseProps) {
   return (
     <Box
       sx={{
         display: 'flex',
         width: '100%',
         whiteSpace: 'nowrap',
-        animation: `${conveyerBelt} 30s linear infinite`,
+        animation: `${conveyerBelt} ${animationTime}s linear infinite`,
         '& > *': {
           width: size,
           height: size,
@@ -47,16 +53,16 @@ export function LogoShowcase({ images = [], sx, size = '85px' }: LogoShowcasePro
           boxShadow: ' 0px 8px 20px rgba(30, 30, 30, 0.1)',
           backfaceVisibility: 'hidden',
           transform: 'translateZ(0)',
-          marginLeft: '80px',
-          marginRight: '80px',
+          marginLeft: '40px',
+          marginRight: '40px',
         },
-        '> :nth-child(even)': {
+        '> :nth-of-type(even)': {
           marginTop: '40px',
         },
-        '> :nth-child(odd)': {
+        '> :nth-of-type(odd)': {
           marginBottom: '40px',
         },
-        ...sx && { sx },
+        ...sx && { ...sx },
       }}
     >
       {
