@@ -1,5 +1,5 @@
-import { Popper, Fade, Paper, Box, Grid } from '@mui/material';
-import React, { ReactNode, MutableRefObject } from 'react';
+import { Popper, Fade, Paper, Box, Grid, Typography } from '@mui/material';
+import React, { ReactNode, MutableRefObject, Fragment } from 'react';
 
 import { ContentItem } from '@enlear/bit-landing-page-template.widgets.content-item';
 
@@ -23,22 +23,23 @@ export type ContentDropProps = {
     href: string;
     description: string;
     color:
-      | 'primary'
-      | 'secondary'
-      | 'error'
-      | 'warning'
-      | 'info'
-      | 'success'
-      | 'action'
-      | 'inherit'
-      | 'disabled'
-      | undefined;
+    | 'primary'
+    | 'secondary'
+    | 'error'
+    | 'warning'
+    | 'info'
+    | 'success'
+    | 'action'
+    | 'inherit'
+    | 'disabled'
+    | undefined;
   }[];
 };
 
 export function ContentDrop({ anchorEl, open, items }: ContentDropProps) {
   return (
-    <Popper anchorEl={anchorEl?.current} open={open} transition>
+    <Popper anchorEl={anchorEl?.current} open={open} transition
+    >
       {({ TransitionProps }) => (
         <Fade {...TransitionProps} timeout={300}>
           <Paper
@@ -60,11 +61,17 @@ export function ContentDrop({ anchorEl, open, items }: ContentDropProps) {
                 }}
                 spacing={6}
               >
-                {items.map((item, itemIdx) => (
-                  <Grid item sx={{ maxWidth: 420 }} key={itemIdx}>
-                    <ContentItem item={item} />
-                  </Grid>
-                ))}
+                <Grid
+                  item
+                  sx={{ maxWidth: 420 }}>
+                  {items.map((item, itemIdx) => (
+                    <Fragment
+                      key={itemIdx}
+                    >
+                      <ContentItem item={item} />
+                    </Fragment>
+                  ))}
+                </Grid>
               </Grid>
             </Box>
           </Paper>

@@ -94,8 +94,7 @@ export function Footer({
             >
               <Typography
                 sx={{
-                  fontSize: 13.5,
-                  fontWeight: 500,
+                  fontWeight: 600,
                   color: (theme) => theme.palette.text.primary,
                 }}
               >

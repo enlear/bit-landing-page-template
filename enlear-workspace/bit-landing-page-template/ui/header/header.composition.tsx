@@ -19,6 +19,20 @@ export const BasicHeader = () => (
               href: '/subitem',
               icon: <InfoIcon />,
             },
+            {
+              color: 'error',
+              description: 'Description of Item 01',
+              label: 'Item 01 Child 01',
+              href: '/subitem',
+              icon: <InfoIcon />,
+            },
+            {
+              color: 'error',
+              description: 'Description of Item 01',
+              label: 'Item 01 Child 01',
+              href: '/subitem',
+              icon: <InfoIcon />,
+            },
           ],
         },
         {
@@ -26,6 +40,13 @@ export const BasicHeader = () => (
           label: 'Item 2',
           expandable: true,
           sub: [
+            {
+              color: 'error',
+              description: 'Description of Item 01',
+              label: 'Item 01 Child 01',
+              href: '/subitem',
+              icon: <InfoIcon />,
+            },
             {
               color: 'error',
               description: 'Description of Item 01',
