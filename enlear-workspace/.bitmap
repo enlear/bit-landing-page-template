@@ -23,7 +23,7 @@
     },
     "layouts/main": {
         "scope": "enlear.bit-landing-page-template",
-        "version": "0.0.15",
+        "version": "0.0.16",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/layouts/main"
     },
@@ -35,7 +35,7 @@
     },
     "navigation/appbar": {
         "scope": "enlear.bit-landing-page-template",
-        "version": "0.0.15",
+        "version": "0.0.16",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/navigation/appbar"
     },
@@ -53,13 +53,13 @@
     },
     "navigation/web-menu-item": {
         "scope": "enlear.bit-landing-page-template",
-        "version": "0.0.8",
+        "version": "0.0.9",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/navigation/web-menu-item"
     },
     "pages/home": {
         "scope": "enlear.bit-landing-page-template",
-        "version": "0.0.25",
+        "version": "0.0.26",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/pages/home"
     },
@@ -71,13 +71,13 @@
     },
     "ui/footer": {
         "scope": "enlear.bit-landing-page-template",
-        "version": "0.0.11",
+        "version": "0.0.12",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/ui/footer"
     },
     "ui/header": {
         "scope": "enlear.bit-landing-page-template",
-        "version": "0.0.17",
+        "version": "0.0.18",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/ui/header"
     },
@@ -107,7 +107,7 @@
     },
     "widgets/content-drop": {
         "scope": "enlear.bit-landing-page-template",
-        "version": "0.0.8",
+        "version": "0.0.9",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/widgets/content-drop"
     },
