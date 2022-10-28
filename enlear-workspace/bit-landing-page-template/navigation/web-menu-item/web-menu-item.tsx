@@ -13,16 +13,16 @@ export type SubMenuItem = {
   href: string;
   description: string;
   color:
-    | 'primary'
-    | 'secondary'
-    | 'error'
-    | 'warning'
-    | 'info'
-    | 'success'
-    | 'action'
-    | 'inherit'
-    | 'disabled'
-    | undefined;
+  | 'primary'
+  | 'secondary'
+  | 'error'
+  | 'warning'
+  | 'info'
+  | 'success'
+  | 'action'
+  | 'inherit'
+  | 'disabled'
+  | undefined;
   icon: React.ReactNode;
 };
 
@@ -32,16 +32,16 @@ export type MenuItem = {
   expandable?: boolean;
   sub: Array<SubMenuItem>;
   color:
-    | 'primary'
-    | 'secondary'
-    | 'error'
-    | 'warning'
-    | 'info'
-    | 'success'
-    | 'action'
-    | 'inherit'
-    | 'disabled'
-    | undefined;
+  | 'primary'
+  | 'secondary'
+  | 'error'
+  | 'warning'
+  | 'info'
+  | 'success'
+  | 'action'
+  | 'inherit'
+  | 'disabled'
+  | undefined;
 };
 
 export type WebMenuItemProps = {
@@ -100,17 +100,20 @@ export function WebMenuItem({ item }: WebMenuItemProps) {
           }}
         />
       </Grow>
-      <ContentDrop
-        anchorEl={ref}
-        items={(item.sub || []).map((item) => ({
-          color: item.color,
-          description: item.description,
-          href: item.href,
-          icon: item.icon,
-          name: item.label,
-        }))}
-        open={hovered}
-      />
+      {item.expandable && (
+        <ContentDrop
+          anchorEl={ref}
+          items={(item.sub || []).map((item) => ({
+            color: item.color,
+            description: item.description,
+            href: item.href,
+            icon: item.icon,
+            name: item.label,
+          }))}
+          open={hovered}
+        />
+      )}
+
     </Box>
   );
 }
