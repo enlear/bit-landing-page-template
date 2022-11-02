@@ -1,5 +1,5 @@
 import { Link } from '@enlear/bit-landing-page-template.navigation.link';
-import { Box, Avatar, Typography, CardMedia, Chip } from '@mui/material';
+import { Box, Avatar, Typography, CardMedia, Chip, CardHeader, CardContent } from '@mui/material';
 import { Card } from '@mui/material';
 import React from 'react';
 import { format } from 'date-fns';
@@ -77,80 +77,52 @@ export function ContentCard({
       <Card
         variant={variant}
         sx={{
-          p: 2,
           backgroundColor: 'background.paper',
           height: '100%',
           width: '100%',
           ...sx && { ...sx }
         }}
       >
-        <Box sx={{ mt: 2 }}>
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              my: 2,
-              gap: 2,
-            }}
-          >
+        <CardHeader
+          avatar={<>
             {publicationName && (
-              <Avatar src={publicationLogo} variant="rounded" />
+              <Avatar
+                src={publicationLogo}
+                alt={publicationName}
+                variant="rounded"
+              />
             )}
+            {!publicationName && <Avatar
+              alt={authorName}
+              src={authorAvatar} />
+            }
+          </>}
+          title={publicationName || authorName}
+          subheader={<>
+            {publishedAt ? `${format(publishedAt, 'do MMM yyyy')}` : ''}
+            {views && publishedAt ? ' | ' : ''}
+            {views ? `${views} Views` : ''}
+          </>}
+        />
 
-            {!publicationName && <Avatar src={authorAvatar} />}
-
-            <Box>
-              <Typography
-                color="textPrimary"
-                variant="subtitle2"
-                fontWeight={500}
-              >
-                {publicationName || authorName}
-                <br />
-                <Typography
-                  component={'span'}
-                  color="textSecondary"
-                  variant="caption"
-                >
-                  {publishedAt ? `${format(publishedAt, 'do MMM yyyy')}` : ''}
-                  {views && publishedAt ? ' | ' : ''}
-                  {views ? `${views} Views` : ''}
-                </Typography>
-              </Typography>
-            </Box>
-          </Box>
-          <div
-            style={{
-              paddingTop: 'calc(210px * 4 / 4)',
-              position: 'relative',
-            }}
+        <CardMedia
+          component="img"
+          sx={{
+            width: '100%',
+            height: 275,
+            aspectRatio: 1 / 2,
+          }}
+          image={coverImage}
+          alt={`Banner image for ${title}`}
+        />
+        <CardContent>
+          <Typography
+            color="textPrimary"
+            variant="h6"
+            style={{ wordWrap: 'break-word' }}
           >
-            <CardMedia
-              sx={{
-                height: '220px',
-                position: 'absolute',
-                top: 0,
-                width: '100%',
-                maxWidth: '100%',
-              }}
-            >
-              <CoverImage url={coverImage} />
-            </CardMedia>
-          </div>
-          <Box
-            sx={{
-              mt: 3,
-            }}
-          >
-            <Typography
-              color="textPrimary"
-              variant="h6"
-              style={{ wordWrap: 'break-word' }}
-            >
-              {title}
-            </Typography>
-          </Box>
-
+            {title}
+          </Typography>
           <Box sx={{ mt: 2, display: 'flex', gap: 1, flexWrap: 'wrap' }}>
             {tags.map((tag, idx) => {
               if (idx > 30) {
@@ -159,7 +131,7 @@ export function ContentCard({
               return <Chip key={tag} label={tag} variant="outlined" />;
             })}
           </Box>
-        </Box>
+        </CardContent>
       </Card>
     </Link>
   );
