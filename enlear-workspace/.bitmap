@@ -23,7 +23,7 @@
     },
     "layouts/main": {
         "scope": "enlear.bit-landing-page-template",
-        "version": "0.0.17",
+        "version": "0.0.19",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/layouts/main"
     },
@@ -59,7 +59,7 @@
     },
     "pages/home": {
         "scope": "enlear.bit-landing-page-template",
-        "version": "0.0.27",
+        "version": "0.0.29",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/pages/home"
     },
@@ -71,7 +71,7 @@
     },
     "ui/footer": {
         "scope": "enlear.bit-landing-page-template",
-        "version": "0.0.12",
+        "version": "0.0.14",
         "mainFile": "index.ts",
         "rootDir": "bit-landing-page-template/ui/footer"
     },

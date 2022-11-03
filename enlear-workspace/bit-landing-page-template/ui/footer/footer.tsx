@@ -81,17 +81,21 @@ export function Footer({
       {...boxProps}
     >
       <Container maxWidth="lg">
-        <Grid container spacing={5}>
+        <Grid
+          container
+          spacing={2}
+        >
           {items.map((item, index) => (
             <Grid
               item
               key={`${item.title}#${index}`}
               {...(item.kind === 'brand' && { xs: 12, sm: 12 })}
               {...(item.kind === 'links' && { xs: 6, sm: 6 })}
-              md={4}
-              lg={4}
-              xl={4}
+              md={2}
+              lg={2}
+              xl={2}
             >
+
               <Typography
                 sx={{
                   fontWeight: 600,
@@ -101,23 +105,25 @@ export function Footer({
                 {item.title}
               </Typography>
               {item.kind === 'brand' && (
-                <Box
-                  sx={{
-                    pt: 2,
-                    display: 'flex',
-                  }}
-                >
-                  {item.links.map((link, linkIdx) => (
+                <>
+                  {item.links.length > 0 && (
                     <Box
                       sx={{
-                        pr: 2,
+                        pt: 2,
+                        display: 'flex',
+                        gap: 2
                       }}
-                      key={`${link.title}#${linkIdx}`}
                     >
-                      <Link href={link.url}>{link.icon}</Link>
+                      {item.links.map((link, linkIdx) => (
+                        <Box
+                          key={`${link.title}#${linkIdx}`}
+                        >
+                          <Link href={link.url}>{link.icon}</Link>
+                        </Box>
+                      ))}
                     </Box>
-                  ))}
-                </Box>
+                  )}
+                </>
               )}
               {item.kind === 'links' && (
                 <List>
@@ -149,26 +155,26 @@ export function Footer({
               )}
             </Grid>
           ))}
-          {ctaCaption && (
-            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-              <Button
-                variant="text"
-                size="large"
-                sx={{
-                  fontSize: 18,
-                  fontWeight: 500,
-                  ml: -2,
-                  color: theme.palette.text.primary,
-                  textTransform: 'none',
-                }}
-                onClick={onCtaClick}
-                endIcon={<ArrowForwardIcon />}
-              >
-                {ctaCaption}
-              </Button>
-            </Grid>
-          )}
         </Grid>
+        {ctaCaption && (
+          <Grid item sx={{ my: 1 }}>
+            <Button
+              variant="text"
+              size="large"
+              sx={{
+                fontSize: 18,
+                fontWeight: 500,
+                ml: -2,
+                color: theme.palette.text.primary,
+                textTransform: 'none',
+              }}
+              onClick={onCtaClick}
+              endIcon={<ArrowForwardIcon />}
+            >
+              {ctaCaption}
+            </Button>
+          </Grid>
+        )}
       </Container>
       <Container maxWidth="lg">
         {brand && (
@@ -176,7 +182,7 @@ export function Footer({
             <Divider
               sx={{
                 borderColor: alpha('#FFF', 0.5),
-                my: 3,
+                my: 1,
               }}
             />
             <Box
@@ -221,7 +227,7 @@ export function Footer({
           </Fragment>
         )}
       </Container>
-    </Box>
+    </Box >
   );
 }
 

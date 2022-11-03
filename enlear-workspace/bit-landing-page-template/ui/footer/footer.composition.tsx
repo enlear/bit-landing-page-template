@@ -12,6 +12,54 @@ import { FooterItem } from './footer.types';
 
 const sections: FooterItem[] = [
   {
+    title: 'Company',
+    kind: 'links',
+    links: [
+      {
+        title: 'About Us',
+        url: '/about',
+        icon: <InfoIcon />,
+      },
+      {
+        title: 'Contact',
+        url: '/contact',
+        icon: <EmailIcon />,
+      },
+    ],
+  },
+  {
+    title: 'Randoms',
+    kind: 'links',
+    links: [
+      {
+        title: 'Leadership',
+        url: '/about',
+        icon: <InfoIcon />,
+      },
+      {
+        title: 'Parternship',
+        url: '/contact',
+        icon: <EmailIcon />,
+      },
+    ],
+  },
+  {
+    title: 'Clicks',
+    kind: 'links',
+    links: [
+      {
+        title: 'Leadership',
+        url: '/about',
+        icon: <InfoIcon />,
+      },
+      {
+        title: 'Parternship',
+        url: '/contact',
+        icon: <EmailIcon />,
+      },
+    ],
+  },
+  {
     title: 'Volt',
     kind: 'brand',
     links: [
@@ -67,22 +115,6 @@ const sections: FooterItem[] = [
             <YouTubeIcon />
           </Avatar>
         ),
-      },
-    ],
-  },
-  {
-    title: 'Company',
-    kind: 'links',
-    links: [
-      {
-        title: 'About Us',
-        url: '/about',
-        icon: <InfoIcon />,
-      },
-      {
-        title: 'Contact',
-        url: '/contact',
-        icon: <EmailIcon />,
       },
     ],
   },
