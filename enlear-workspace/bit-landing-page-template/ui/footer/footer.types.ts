@@ -17,6 +17,7 @@ export type FooterBrand = {
   termsUrl?: string;
   privacyUrl?: string;
   cookieUrl?: string;
+  email?: string;
 };
 
 export const FooterBrandLabels: { [key: string]: string } = {

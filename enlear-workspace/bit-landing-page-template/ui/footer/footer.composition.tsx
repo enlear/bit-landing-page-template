@@ -133,6 +133,9 @@ export const BasicFooter = () => (
           privacyUrl: '/privacy',
           cookieUrl: '/cookie',
         }}
+        links={{
+          'hello@volt.com': 'mailto:hello@volt.com'
+        }}
       />
     </div>
   </LightTheme>

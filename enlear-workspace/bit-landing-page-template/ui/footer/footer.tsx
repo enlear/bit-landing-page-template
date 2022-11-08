@@ -35,6 +35,13 @@ export type FooterProps = {
    * click listener for the footer call to action
    */
   onCtaClick?: () => void;
+
+  /**
+   * custom footer links
+   * key - label
+   * value - link
+   */
+  links?: Record<string, string>;
 } & BoxProps;
 
 export function Footer({
@@ -42,6 +49,7 @@ export function Footer({
   brand,
   ctaCaption,
   onCtaClick,
+  links,
   ...boxProps
 }: FooterProps) {
   const theme = useTheme();
@@ -203,25 +211,23 @@ export function Footer({
                     </Typography>
                   </Grid>
                 )}
-                {!!(
-                  brand?.cookieUrl ||
-                  brand?.privacyUrl ||
-                  brand?.termsUrl
-                ) && (
-                    <Grid item md={9} sx={{ display: 'flex', gap: 2 }}>
-                      {Object.entries(brand || {}).map(([key, value]) => (
-                        <Fragment key={key}>
-                          {key !== 'brandLabel' && (
-                            <Link href={value} sx={{ ...linkSx }}>
-                              <Typography sx={{ ...linkSx }}>
-                                {FooterBrandLabels[key as keyof FooterBrand]}
-                              </Typography>
-                            </Link>
-                          )}
-                        </Fragment>
-                      ))}
-                    </Grid>
-                  )}
+                <Grid item md={9} sx={{ display: 'flex', gap: 2 }}>
+                  {Object.entries({ ...brand && { ...brand }, ...links && { ...links } }).map(([key, value]) => (
+                    <Fragment key={key}>
+                      {key !== 'brandLabel' && (
+                        <Link href={value} sx={{ ...linkSx }}>
+                          <Typography sx={{ ...linkSx }}>
+                            {FooterBrandLabels[key as keyof FooterBrand] ? (
+                              FooterBrandLabels[key as keyof FooterBrand]
+                            ) : (
+                              key
+                            )}
+                          </Typography>
+                        </Link>
+                      )}
+                    </Fragment>
+                  ))}
+                </Grid>
               </Grid>
             </Box>
           </Fragment>
