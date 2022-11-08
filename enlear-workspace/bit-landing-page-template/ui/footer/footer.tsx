@@ -216,7 +216,11 @@ export function Footer({
                     <Fragment key={key}>
                       {key !== 'brandLabel' && (
                         <Link href={value} sx={{ ...linkSx }}>
-                          <Typography sx={{ ...linkSx }}>
+                          <Typography sx={{
+                            ...linkSx, ...FooterBrandLabels[key as keyof FooterBrand] === undefined && {
+                              borderBottom: '1px solid',
+                            }
+                          }}>
                             {FooterBrandLabels[key as keyof FooterBrand] ? (
                               FooterBrandLabels[key as keyof FooterBrand]
                             ) : (
