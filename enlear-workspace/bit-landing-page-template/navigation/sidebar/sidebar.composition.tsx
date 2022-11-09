@@ -24,15 +24,9 @@ export const BasicSidebar = () => (
         {
           color: 'secondary',
           label: 'Item 2',
-          expandable: true,
+          href: '/item2',
+          expandable: false,
           sub: [
-            {
-              color: 'error',
-              description: 'Description of Item 01',
-              label: 'Item 01 Child 01',
-              href: '/subitem',
-              icon: <InfoIcon />,
-            },
           ],
         },
       ]}

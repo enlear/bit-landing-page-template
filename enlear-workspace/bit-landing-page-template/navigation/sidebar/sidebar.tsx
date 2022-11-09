@@ -11,6 +11,8 @@ import {
 import React from 'react';
 import { ContentItem } from '@enlear/bit-landing-page-template.widgets.content-item';
 import { Logo } from '@enlear/bit-landing-page-template.widgets.logo';
+import { Wrapper } from '@enlear/bit-landing-page-template.layouts.wrapper';
+import { Link } from '@enlear/bit-landing-page-template.navigation.link';
 
 export type SubMenuItem = {
   label: string;
@@ -119,11 +121,23 @@ export function Sidebar({ items, onClose, open, logo }: SidebarProps) {
                 />,
               })}
             >
-              <Typography variant="body2" fontSize={26}
-                fontWeight={600}
+              <Wrapper
+                condition={Boolean(item.href)}
+                wrapper={(children) => (
+                  <Link
+                    color={'inherit'}
+                    href={item.href as string}
+                  >
+                    {children}
+                  </Link>
+                )}
               >
-                {item.label}
-              </Typography>
+                <Typography variant="body2" fontSize={26}
+                  fontWeight={600}
+                >
+                  {item.label}
+                </Typography>
+              </Wrapper>
             </AccordionSummary>
             {item.sub.length > 0 && (
               <AccordionDetails>

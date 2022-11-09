@@ -20,26 +20,26 @@ export type LinkProps = {
   /**
    * the color of the text
    */
-  color?: 'textPrimary' | 'textSecondary';
+  color?: 'textPrimary' | 'textSecondary' | 'inherit';
 
   /**
    * the text variant
    */
   variant?:
-    | 'h1'
-    | 'h2'
-    | 'h3'
-    | 'h4'
-    | 'h5'
-    | 'h6'
-    | 'subtitle1'
-    | 'subtitle2'
-    | 'body1'
-    | 'body2'
-    | 'button'
-    | 'caption'
-    | 'overline'
-    | 'inherit';
+  | 'h1'
+  | 'h2'
+  | 'h3'
+  | 'h4'
+  | 'h5'
+  | 'h6'
+  | 'subtitle1'
+  | 'subtitle2'
+  | 'body1'
+  | 'body2'
+  | 'button'
+  | 'caption'
+  | 'overline'
+  | 'inherit';
 };
 
 export function Link({ children, href, sx, color, variant }: LinkProps) {
