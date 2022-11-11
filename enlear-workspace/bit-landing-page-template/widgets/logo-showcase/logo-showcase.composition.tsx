@@ -14,7 +14,8 @@ export const BasicLogoShowcase = () => {
         {
           src: 'https://static.bit.dev/bit-logo.svg',
           alt: 'bit logo',
-          name: 'Bit'
+          name: 'Bit',
+          url: 'https://bit.dev',
         },
         {
           src: 'https://static.bit.dev/bit-logo.svg',
@@ -25,7 +26,8 @@ export const BasicLogoShowcase = () => {
         {
           src: 'https://static.bit.dev/bit-logo.svg',
           alt: 'bit logo',
-          name: 'Bit'
+          name: 'Bit',
+          url: 'https://bit.dev',
         },
 
       ]}

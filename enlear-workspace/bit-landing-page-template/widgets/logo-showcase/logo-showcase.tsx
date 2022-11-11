@@ -78,18 +78,19 @@ export function LogoShowcase({ images = [], sx, size = '85px', animationTime = 2
             key={index}
             condition={!!image.url}
             wrapper={(children) => (
-              <Link
-                sx={{
-                  color: 'inherit'
-                }}
-                href={image.url as string}
-              >
-                {children}
-              </Link>
+              <Box>
+                <Link
+                  sx={{
+                    color: 'inherit',
+                  }}
+                  href={image.url as string}
+                >
+                  {children}
+                </Link>
+              </Box>
             )}
           >
-            <Box
-            >
+            <Box>
               <img
                 src={image.src}
                 alt={image.alt}
