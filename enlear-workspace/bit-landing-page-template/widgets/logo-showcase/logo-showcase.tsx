@@ -1,9 +1,10 @@
 import { Typography } from '@mui/material';
 import { keyframes } from '@mui/material';
-import { Chip } from '@mui/material';
 import { Box, SxProps } from '@mui/material';
 import React from 'react';
 import { ShowCaseImage } from './logo-showcase.types';
+import { Wrapper } from '@enlear/bit-landing-page-template.layouts.wrapper';
+import { Link } from '@enlear/bit-landing-page-template.navigation.link';
 
 export type LogoShowcaseProps = {
   /**
@@ -57,6 +58,10 @@ export function LogoShowcase({ images = [], sx, size = '85px', animationTime = 2
           transform: 'translateZ(0)',
           marginLeft: '40px',
           marginRight: '40px',
+          transition: 'box-shadow 0.1s ease-in-out',
+          '&:hover': {
+            boxShadow: '0px 8px 20px rgba(30, 30, 30, 0.5)',
+          }
         },
         '> :nth-of-type(even)': {
           marginTop: '40px',
@@ -69,26 +74,40 @@ export function LogoShowcase({ images = [], sx, size = '85px', animationTime = 2
     >
       {
         images.map((image, index) => (
-          <Box
+          <Wrapper
             key={index}
-          >
-            <img
-              src={image.src}
-              alt={image.alt}
-              style={{ width: size, height: size, borderRadius: '100%' }}
-            />
-            {image.name && (
-              <Typography
-                textAlign={"center"}
-                variant='body2'
-                fontSize={16}
-                marginTop={3.5}
-                fontWeight={500}
+            condition={!!image.url}
+            wrapper={(children) => (
+              <Link
+                sx={{
+                  color: 'inherit'
+                }}
+                href={image.url as string}
               >
-                {image.name}
-              </Typography>
+                {children}
+              </Link>
             )}
-          </Box>
+          >
+            <Box
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                style={{ width: size, height: size, borderRadius: '100%' }}
+              />
+              {image.name && (
+                <Typography
+                  textAlign={"center"}
+                  variant='body2'
+                  fontSize={16}
+                  marginTop={3.5}
+                  fontWeight={500}
+                >
+                  {image.name}
+                </Typography>
+              )}
+            </Box>
+          </Wrapper>
         ))
       }
     </Box >
