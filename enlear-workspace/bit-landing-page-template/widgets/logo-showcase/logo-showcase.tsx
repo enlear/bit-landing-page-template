@@ -28,6 +28,11 @@ export type LogoShowcaseProps = {
    * @default 20
    */
   animationTime?: number
+
+  /**
+   * margin left and right between images in px
+   */
+  margin?: string
 };
 
 const conveyerBelt = keyframes`
@@ -39,14 +44,15 @@ const conveyerBelt = keyframes`
   }
 `;
 
-export function LogoShowcase({ images = [], sx, size = '85px', animationTime = 20 }: LogoShowcaseProps) {
+export function LogoShowcase({ images = [], sx, size = '85px', animationTime = 20, margin = "40px" }: LogoShowcaseProps) {
   return (
     <Box
+      component="div"
       sx={{
         display: 'flex',
         width: '100%',
         whiteSpace: 'nowrap',
-        animation: `${conveyerBelt} ${animationTime}s linear infinite`,
+        animation: `${conveyerBelt} ${animationTime}s linear infinite forwards`,
         '& > *': {
           width: size,
           height: size,
@@ -56,8 +62,8 @@ export function LogoShowcase({ images = [], sx, size = '85px', animationTime = 2
           boxShadow: ' 0px 8px 20px rgba(30, 30, 30, 0.1)',
           backfaceVisibility: 'hidden',
           transform: 'translateZ(0)',
-          marginLeft: '40px',
-          marginRight: '40px',
+          marginLeft: margin,
+          marginRight: margin,
           transition: 'box-shadow 0.1s ease-in-out',
           '&:hover': {
             boxShadow: '0px 8px 20px rgba(30, 30, 30, 0.5)',
@@ -104,7 +110,12 @@ export function LogoShowcase({ images = [], sx, size = '85px', animationTime = 2
                   marginTop={3.5}
                   fontWeight={500}
                 >
-                  {image.name}
+                  {image.name.split('')?.map((char, index) => {
+                    if (char === '\n') {
+                      return <br key={index} />;
+                    }
+                    return char;
+                  })}
                 </Typography>
               )}
             </Box>
